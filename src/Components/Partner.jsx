@@ -1,26 +1,14 @@
 export default function Partner() {
   const partners = [
     {
-      name: "NELLYVAL GROUP",
+      name: "LIVIA SOFT",
       role: "Strategic Partner",
-      description:
-        "Provides end‑to‑end logistics support, ensuring seamless movement of goods across regional and international routes.",
-      email: "nellyvalgroup@example.com",
-      phone: "0800 123 4567",
-      location: "Lagos, Nigeria", 
-      image: "/images/nellyval-logo.png",
-      link: "/partners/nellyval"
+      image: "/img/IMG_2776.jpeg", 
     },
     {
-      name: "Nova Infrastructure Partner",
+      name: "NELLYVAL GROUP",
       role: "Technical Partner",
-      description:
-        "Offers engineering and infrastructure expertise for large‑scale construction and industrial projects.",
-      email: "contact@nova-infra.com",
-      phone: "0800 987 6543",
-      location: "Abuja, Nigeria",  
-      image: "/images/nova-logo.png",
-      link: "/partners/nova"
+      image: "/img/IMG_2775.jpeg",
     },
   ];
 
@@ -31,19 +19,18 @@ export default function Partner() {
       description:
         ".Visa Services .Tour & Vacation .Airline Ticketing .Hotel Reservation .International Passport Facilitation",
       email: "greatvacations20@gmail.com",
-      phone: "0816 385 7519 ,  0905 084 5077",
-      location: "1st Floor, Akalaka Plaza, 127 Upper chime Enugu,Enugu State",  
-      image: "/img/IMG_2766.png"
+      phone: "0816 385 7519, 0905 084 5077",
+      location: "1st Floor, Akalaka Plaza, 127 Upper chime Enugu, Enugu State",  
+      image: "/img/Cloud Travel logo.png"
     },
     {
       name: "MOUNTVILLA",
       focus: "CONSTRUCTIONS",
       description:
-        ".Road Construction & Rehabilitation .Building Construction .Site Preparation & Earthworks .Ronovation & Maintenance Projects .Manpower & Site Support Services ",
-      email: "support@bawayaict.com",
-      phone: "0801 876 5432",
-      location: "Lagos, Nigeria", 
-      image: "/img/IMG_2767.png"
+        ".Road Construction & Rehabilitation .Building Construction .Site Preparation & Earthworks .Renovation & Maintenance Projects .Manpower & Site Support Services",
+      phone: "0803 708 3514",
+      location: "Plot 883 Olu Awotesu Street, Jabi-Abuja", 
+      image: "/img/Orange White Modern Construction Logo (1).png"
     },
   ];
 
@@ -55,87 +42,24 @@ export default function Partner() {
             Our Partners & Subsidiaries
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Strategic alliances and owned entities that strengthen the <span className="text-indigo-600">P.A 
-            BAWAYA GROUP</span> value chain.
+            Strategic alliances and owned entities that strengthen the <span className="text-indigo-600">P.A BAWAYA GROUP</span> value chain.
           </p>
         </header>
 
-        {/* Partners section */}
+        {/* Subsidiaries section - MOVED FIRST */}
         <section className="mb-12">
-          <h3 className="text-2xl font-semibold text-slate-900">
-            Strategic Partners
-          </h3>
-          <p className="mt-2 text-sm sm:text-base text-slate-600">
-            Key external organizations that collaborate with us to deliver
-            integrated business and industrial solutions.
-          </p>
-
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {partners.map((partner) => (
-              <a
-                key={partner.name}
-                href={partner.link}
-                className="block rounded-xl border border-slate-200 bg-white p-5 shadow-sm group hover:shadow-xl transition-all duration-300 no-underline focus:outline-none focus:ring-4 focus:ring-blue-500/20"
-              >
-                {/* Image for partners */}
-                <div className="mb-4 h-20 w-20 mx-auto group-hover:scale-110 transition-transform duration-500">
-                  <img
-                    src={partner.image}
-                    alt={`${partner.name} logo`}
-                    className="w-full h-full object-contain rounded-lg shadow-lg"
-                  />
-                </div>
-
-                <h4 className="text-lg font-semibold text-slate-900  transition-colors">
-                  {partner.name}
-                </h4>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
-                  {partner.role}
-                </p>
-                <p className="mt-3 text-sm text-slate-600">
-                  {partner.description}
-                </p>
-                
-                {/* Contact info for partners */}
-                <div className="mt-4 pt-4 border-t border-slate-200">
-                  <p className="text-xs text-slate-500 mb-3">Contact:</p>
-                  <p className="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors mb-2">
-                    📧 {partner.email}
-                  </p>
-                  <p className="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors mb-2">
-                    📞 {partner.phone}
-                  </p>
-                  <p className="text-sm font-medium text-slate-700 mb-3">
-                    📍 {partner.location}
-                  </p>
-                  
-                  {/* Click to view button */}
-                  <div className="pt-3">
-                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg shadow-sm border border-blue-200 inline-block transition-all duration-300 hover:shadow-md cursor-pointer">
-                      CLICK TO VIEW
-                    </span>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        {/* Subsidiaries section */}
-        <section>
-          <h3 className="text-2xl font-semibold text-slate-900 group-hover:scale-110 transition-transform duration-500">
+          <h3 className="text-2xl font-semibold text-slate-900 mb-4">
             Group Subsidiaries
           </h3>
-          <p className="mt-2 text-sm sm:text-base text-slate-600">
-            Fully or majority‑owned companies operating under the P.A BAWAYA
-            GROUP umbrella.
+          <p className="text-sm sm:text-base text-slate-600 mb-8">
+            Fully or majority-owned companies operating under the P.A BAWAYA GROUP umbrella.
           </p>
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {subsidiaries.map((sub) => (
               <article
                 key={sub.name}
-                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-xl transition-all duration-300"
+                className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl transition-all duration-300"
               >
                 {/* Image for subsidiaries */}
                 <div className="mb-4 h-20 w-20 mx-auto">
@@ -146,23 +70,25 @@ export default function Partner() {
                   />
                 </div>
                 
-                <h4 className="text-lg font-semibold text-slate-900">
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">
                   {sub.name}
                 </h4>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
+                <p className="text-xs font-semibold uppercase tracking-wide text-blue-600 mb-3">
                   {sub.focus}
                 </p>
-                <p className="mt-3 text-sm text-slate-600">
+                <p className="mt-3 text-sm text-slate-600 mb-6 leading-relaxed">
                   {sub.description}
                 </p>
                 
-                {/* Contact info for subsidiaries */}
-                <div className="mt-4 pt-4 border-t border-slate-200">
-                  <p className="text-xs text-slate-500 mb-3">Contact:</p>
+                {/* Contact info - Conditional email display */}
+                <div className="pt-4 border-t border-slate-200">
+                  <p className="text-xs text-slate-500 mb-3 font-medium">Contact:</p>
+                  {sub.email && (
+                    <p className="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors mb-2">
+                      📧 {sub.email}
+                    </p>
+                  )}
                   <p className="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors mb-2">
-                    📧 {sub.email}
-                  </p>
-                  <p className="text-sm font-mediumtext-slate-600 hover:text-blue-700 transition-colors mb-2">
                     📞 {sub.phone}
                   </p>
                   <p className="text-sm font-medium text-slate-700">
@@ -170,6 +96,45 @@ export default function Partner() {
                   </p>
                 </div>
               </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Partners section - Image on LEFT */}
+        <section>
+          <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+            Strategic Partners
+          </h3>
+          <p className="text-sm sm:text-base text-slate-600 mb-8">
+            Key external organizations that collaborate with us to deliver integrated business and industrial solutions.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {partners.map((partner) => (
+              <a
+                key={partner.name}
+                href="#" // Add your partner links
+                className="group block rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl transition-all duration-300 no-underline focus:outline-none focus:ring-4 focus:ring-blue-500/20 flex items-start gap-4 hover:no-underline"
+              >
+                {/* Image on LEFT */}
+                <div className="flex-shrink-0 w-20 h-20 group-hover:scale-110 transition-transform duration-500">
+                  <img
+                    src={partner.image}
+                    alt={`${partner.name} logo`}
+                    className="w-full h-full object-contain rounded-lg shadow-lg"
+                  />
+                </div>
+
+                {/* Content on RIGHT */}
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-lg font-semibold text-slate-900 group-hover:text-slate-700 transition-colors">
+                    {partner.name}
+                  </h4>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
+                    {partner.role}
+                  </p>
+                </div>
+              </a>
             ))}
           </div>
         </section>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Info = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="max-w-6xl w-full bg-white shadow-sm rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
         {/* Left side */}
         <div className="bg-gray-50 p-10 md:p-14 flex flex-col justify-between">

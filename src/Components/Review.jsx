@@ -2,32 +2,32 @@ import { motion } from "framer-motion";
 
 const reviews = [
   {
-    name: "John Williams",
+    name: "Mr Dominic Ekwe",
+    role: "International Business Owner",
+    text: "P.A BAWAYA GROUP is a top-tier logistics and trade solutions company. They handled everything from product arrival to clearing, saving us time, money, and stress.",
+  },
+  {
+    name: "Mr Elochukwu Igwegbe",
+    role: "Business Investor",
+    text: "P.A BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively.",
+  },
+  {
+    name: "Augustine Owunna",
     role: "Business Owner",
-    text: "Excellent service and great attention to detail. Highly recommended!",
-  },
-  {
-    name: "Sarah Johnson",
-    role: "Product Manager",
-    text: "Very professional team. The result exceeded my expectations.",
-  },
-  {
-    name: "Michael Brown",
-    role: "Startup Founder",
-    text: "Clean design, fast delivery, and amazing communication.",
+    text: "Exceptional logistics support from P.A BAWAYA GROUP. They helped bring in our products, managed customs clearing perfectly, and kept us informed throughout the entire process.",
   },
     {
-    name: "Uche Emmanuel",
-    role: "Business Owner",
+    name: "Mr Chris Oholi",
+    role: "German Business Mogul",
     text: "Excellent Service from Start to finish.They handled importation, clearing and delivery seamlessly.Professional, reliable, and transparent throughout the process.Highly recommended for stress-free international trade.",
   },
     {
-    name: "Michael Brown",
-    role: "Startup Founder",
-    text: "Clean design, fast delivery, and amazing communication.",
+    name: "Mr Chinedu Nwaku",
+    role: "Business Owner",
+    text: "P.A BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively",
   },
     {
-    name: " Smart kennedy ",
+    name: "Mr Sunday Ugwu ",
     role: "Business owner",
     text: "Reliable and efficient importation services. They managed customs clearing, documentation, and delivery. Communication was clear timelines were met, and the entire process was smooth and worry- free.",
   },

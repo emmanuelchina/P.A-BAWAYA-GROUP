@@ -44,8 +44,15 @@ const services = [
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function Showcase() {
+ 
+ 
+ const navigate = useNavigate()
+
+const handleClick = () => {
+ navigate(  "/Services")
+};
 const [index, setIndex] = useState(0);
 const [direction, setDirection] = useState(1);
 
@@ -108,7 +115,9 @@ className="w-full h-full object-cover"
 <p className="text-base md:text-lg mb-6">
 {service.text}
 </p>
-<button className="px-6 py-3 bg-white text-black rounded-md font-semibold hover:bg-opacity-90 transition-colors">
+<button
+   onClick={handleClick}
+    className="px-6 py-3 bg-white text-black rounded-md font-semibold hover:bg-opacity-90 transition-colors">
 Learn More
 </button>
 </div>

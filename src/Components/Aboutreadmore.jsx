@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const ReadMore = () => {
   return (
@@ -6,7 +6,7 @@ const ReadMore = () => {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          {/* Text section - appears second on mobile, first on lg */}
+       
           <div className="order-last lg:order-first">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 leading-tight">
               Delivering Solution.
@@ -43,14 +43,14 @@ const ReadMore = () => {
                 <div className="overflow-hidden rounded-3xl bg-gray-200 shadow-xl w-32 h-40 sm:w-40 sm:h-52 lg:w-44 lg:h-60">
                   <img
                     src="/img/container-817406_1280.jpg"
-                    alt="Team presentation"
+                    alt="GOODS"
                     className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="overflow-hidden rounded-3xl bg-gray-200 shadow-xl w-32 h-40 sm:w-40 sm:h-52 lg:w-44 lg:h-60">
                   <img
-                    src="https://images.pexels.com/photos/1181352/pexels-photo-1181352.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Office collaboration"
+                    src="/img/refinery-3613522_1280.jpg"
+                    alt="oil"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -59,15 +59,15 @@ const ReadMore = () => {
               <div className="space-y-4 sm:space-y-6">
                 <div className="overflow-hidden rounded-3xl bg-gray-200 shadow-xl w-32 h-40 sm:w-40 sm:h-52 lg:w-44 lg:h-60">
                   <img
-                    src="https://images.pexels.com/photos/1181605/pexels-photo-1181605.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Woman working on laptop"
+                    src="/img/construction-site-3555550_1280.jpg"
+                    alt="Construction"
                     className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="overflow-hidden rounded-3xl bg-gray-200 shadow-xl w-32 h-40 sm:w-40 sm:h-52 lg:w-44 lg:h-60">
                   <img
-                    src="https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="People having discussion"
+                    src="/img/2255f80e-4d4d-4826-8848-bf5710cdb089.jpeg"
+                    alt="Plane"
                     className="h-full w-full object-cover"
                   />
                 </div>
