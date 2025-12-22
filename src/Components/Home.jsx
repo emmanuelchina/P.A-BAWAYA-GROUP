@@ -1,0 +1,110 @@
+
+import { motion } from "framer-motion";
+
+export default function Home() {
+  const container = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.15 * i, duration: 3, ease: "easeOut" },
+    }),
+  };
+
+  return (
+    <div className="bg-gradient-to-b from-gray-50 via-white to-gray-100 text-slate-900 min-h-screen flex items-center">
+      <div className="w-full">
+        <motion.section
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="max-w-5xl mx-auto px-4 sm:px-6 text-center"
+        >
+          <motion.p
+            custom={0}
+            variants={item}
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs sm:text-sm font-medium text-slate-600 shadow-sm"
+          >
+            P.A BAWAYA GROUP
+            <span className="h-1 w-1 rounded-full bg-blue-600" />
+            Integrated Solutions
+          </motion.p>
+
+          <motion.h1
+            custom={1}
+            variants={item}
+            className="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-balance text-slate-900"
+          >
+            Integrated{" "}
+            <span className="text-blue-600">
+              Business &amp; Industrial
+            </span>{" "}
+            Solutions
+          </motion.h1>
+
+          <motion.p
+            custom={2}
+            variants={item}
+            className="mt-6 text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
+          >
+            Delivering excellence across Logistics, Construction, ICT, Oil &amp;
+            Gas, and International Trade connecting ideas, infrastructure, and
+            opportunities for sustainable growth.
+          </motion.p>
+
+          <motion.div
+            custom={3}
+            variants={item}
+            className="mt-10 flex flex-wrap justify-center gap-4"
+          >
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base shadow-md shadow-blue-500/30">
+              Explore our services
+            </button>
+
+            <button className="border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base">
+              Talk to our team
+            </button>
+          </motion.div>
+
+          <motion.div
+            custom={4}
+            variants={item}
+            className="mt-10 flex flex-wrap justify-center gap-6 text-xs sm:text-sm text-slate-600"
+          >
+            <div>
+              <span className="font-semibold text-slate-900">5+ sectors</span>
+              <span className="block text-slate-500">
+                Logistics, ICT, Oil &amp; Gas…
+              </span>
+            </div>
+            <div>
+              <span className="font-semibold text-slate-900">
+                Pan‑African reach
+              </span>
+              <span className="block text-slate-500">
+                Regional &amp; global trade links
+              </span>
+            </div>
+            <div>
+              <span className="font-semibold text-slate-900">
+                Client‑first
+              </span>
+              <span className="block text-slate-500">
+                Tailored industrial solutions
+              </span>
+            </div>
+          </motion.div>
+        </motion.section>
+      </div>
+    </div>
+  );
+}
