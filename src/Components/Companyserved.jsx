@@ -58,7 +58,7 @@ return (
 Industries We Serve
 </h2>
 <p className="mt-4 text-gray-600">
-P.A Bawaya delivers tailored solutions across multiple industries,
+<span className="text-indigo-600"> P.A. Bawaya Group</span> delivers tailored solutions across multiple industries,
 combining expertise, technology, and operational excellence.
 </p>
 </div>

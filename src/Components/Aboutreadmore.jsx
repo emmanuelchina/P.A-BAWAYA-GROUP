@@ -9,6 +9,7 @@ const ReadMore = () => {
        
           <div className="order-last lg:order-first">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 leading-tight">
+            Who Are WE <br></br>
               Delivering Solution.
               <br className="hidden sm:block" />
               <span className="block">
@@ -21,16 +22,11 @@ const ReadMore = () => {
                 P.A. Bawaya Group
               </h2>
               <p className="pt-5">
-                Our company is a diversified service company committed to delivering reliable, innovative, and result driven solutions across multiple industries. We operate with a clear mission: to support businesses and projects with the expertise, structure, and professionalism required to succeed in today's competitive environment.
+           Founded in 2002 and incorporated with RC number 456212, P.A. Bawaya International Limited began with modest operations fulfilling essential consumer demands. Over the years, it expanded into regional and global business delivery, diversifying into vital sectors like logistics, construction, ICT/tech, oil/gas, airline services, and international trade. The company excels at serving local and foreign investors in both large- and small-scale ventures by partnering with strategic allies worldwide for swift, dependable services.
+
               </p>
               <br />
-              <p className="pt-5">
-                Our services span logistics solutions, construction and site jobs, ICT and technology services, oil and gas support, and international trade and business solutions. By combining industry knowledge with strategic partnerships, we provide end-to-end services tailored to meet the unique needs of our clients.
-              </p>
-              <br />
-              <p className="pt-5">
-                At P.A Bawaya Group, we believe that every project deserves careful planning, secure handling, and timely execution. This is why we place strong emphasis on efficiency, confidentiality, and quality delivery in everything we do.
-              </p>
+           
             </p>
           </div>
 

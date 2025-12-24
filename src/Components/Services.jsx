@@ -4,6 +4,7 @@ import {
   FaLaptopCode,
   FaOilCan,
   FaGlobe,
+  FaPlane, // Added for Airline Services
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -34,6 +35,11 @@ const services = [
     desc: "Harnessing cutting-edge digital tools, cybersecurity, and cloud integration to fuel innovation bridging gaps in efficiency, scalability, and data intelligence for a competitive edge in the digital age.",
     icon: FaLaptopCode,
   },
+  {
+    title: "Airline Services",
+    desc: "Delivering swift air freight, flight booking, visa processing, and aviation logistics with global reach ensuring time-critical shipments, seamless travel, and comprehensive airport operations worldwide.",
+    icon: FaPlane,
+  },
 ];
 
 const cardVariants = {
@@ -43,12 +49,11 @@ const cardVariants = {
 };
 
 export default function Services() {
- 
- const navigate = useNavigate()
+  const navigate = useNavigate();
 
-const handleClick = () => {
- navigate(  "/Services")
-};
+  const handleClick = () => {
+    navigate("/Services");
+  };
 
   return (
     <section className="relative bg-gray-100 py-20 px-4 overflow-hidden">
@@ -65,7 +70,8 @@ const handleClick = () => {
             Smart Services for Global Business
           </h2>
           <p className="mt-4 text-slate-900 max-w-2xl mx-auto">
-            We provide cutting-edge solutions, unparalleled proficiency, and exceptional outcomes.
+            We provide cutting-edge solutions, unparalleled proficiency, and
+            exceptional outcomes.
           </p>
         </motion.div>
 
@@ -103,12 +109,13 @@ const handleClick = () => {
           viewport={{ once: false }}
           transition={{ duration: 0.6 }}
           className="mt-16 text-center"
-        >  
-       
-          <button   onClick={handleClick} className="
+        >
+          <button
+            onClick={handleClick}
+            className="
           inline-flex items-center gap-2 rounded-full bg-slate-500 px-8 py-3 font-semibold text-white hover:bg-gray-400 transition"
-            >
-            Explore This Service 
+          >
+            Explore This Service
           </button>
         </motion.div>
       </div>

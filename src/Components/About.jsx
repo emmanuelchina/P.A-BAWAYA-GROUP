@@ -1,4 +1,3 @@
-
 import {
   FaBuilding,
   FaTruck,
@@ -11,16 +10,18 @@ import {
   FaChartLine,
   FaHandshake,
   FaCheckCircle,
+  FaPlane,
 } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const stats = [
-  { value: "8+", label: "Years Experience" },
+  { value: "20+", label: "Years Experience" },
   { value: "120+", label: "Projects Delivered" },
   { value: "250+", label: "Clients Served" },
-  { value: "5", label: "Core Services" },
-  { value: "10+", label: "Strategic Partners" },
+  { value: "6", label: "Core Services" },
+  { value: "5+", label: "Strategic Partners" },
 ];
 
 const services = [
@@ -48,6 +49,11 @@ const services = [
     icon: <FaGlobe />,
     title: "International Trade",
     desc: "Cross-border trade facilitation and business solutions.",
+  },
+  {
+    icon: <FaPlane />,
+    title: "Airline Services",
+    desc: "Delivering swift air freight, flight booking, visa processing, and aviation logistics.",
   },
 ];
 
@@ -80,6 +86,7 @@ const values = [
 ];
 
 export default function About() {
+  const navigate = useNavigate();
   const heroRef = useRef(null);
   const whoWeAreRef = useRef(null);
   const servicesRef = useRef(null);
@@ -93,32 +100,32 @@ export default function About() {
   const isProcessInView = useInView(processRef, { once: false, amount: 0.3 });
   const isValuesInView = useInView(valuesRef, { once: false, amount: 0.3 });
   const isCtaInView = useInView(ctaRef, { once: false, amount: 0.3 });
-
+  const handleContact = () => {
+    navigate("/Contact");
+  };
   return (
-    <section className="w-full bg-100-100 text-gray-800">
+    <section className="w-full bg-gray-100 text-gray-800">
       {/* HERO */}
       <motion.div
         ref={heroRef}
         className="bg-gray-900 text-white py-24 text-center"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ 
-          opacity: isHeroInView ? 1 : 0, 
-          y: isHeroInView ? 0 : 20 
+        animate={{
+          opacity: isHeroInView ? 1 : 0,
+          y: isHeroInView ? 0 : 20,
         }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ 
-            scale: isHeroInView ? 1 : 0.8, 
-            opacity: isHeroInView ? 1 : 0 
+          animate={{
+            scale: isHeroInView ? 1 : 0.8,
+            opacity: isHeroInView ? 1 : 0,
           }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <FaBuilding className="mx-auto text-7xl mb-6 opacity-80" />
-          <h1 className="text-4xl md:text-5xl font-bold">
-            P.A Bawaya Group
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold">P.A. Bawaya Group</h1>
           <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
             Delivering Solutions. Building Trust.
           </p>
@@ -130,19 +137,20 @@ export default function About() {
         ref={whoWeAreRef}
         className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14"
         initial={{ opacity: 0, x: -20 }}
-        animate={{ 
-          opacity: isWhoInView ? 1 : 0, 
-          x: isWhoInView ? 0 : -20 
+        animate={{
+          opacity: isWhoInView ? 1 : 0,
+          x: isWhoInView ? 0 : -20,
         }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         <div>
           <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
           <p className="text-gray-600 leading-relaxed">
-            P.A Bawaya Group is a multi-service company providing
-            professional solutions across logistics, construction,
-            ICT & technology, oil and gas, and international trade.
-            We are driven by excellence, confidentiality, and results.
+            <span className="text-indigo-600"> P.A. Bawaya Group</span> is a
+            multi-service company providing professional solutions across
+            logistics, construction, ICT & technology, oil and gas, and
+            international trade. We are driven by excellence, confidentiality,
+            and results.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6">
@@ -151,15 +159,13 @@ export default function About() {
               key={i}
               className="bg-white shadow rounded-xl p-6 text-center"
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ 
-                opacity: isWhoInView ? 1 : 0, 
-                scale: isWhoInView ? 1 : 0.9 
+              animate={{
+                opacity: isWhoInView ? 1 : 0,
+                scale: isWhoInView ? 1 : 0.9,
               }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <h3 className="text-3xl font-bold text-gray-900">
-                {stat.value}
-              </h3>
+              <h3 className="text-3xl font-bold text-gray-900">{stat.value}</h3>
               <p className="text-gray-500 mt-2">{stat.label}</p>
             </motion.div>
           ))}
@@ -175,16 +181,18 @@ export default function About() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-14">What We Offer</h2>
+          <h2 className="text-3xl font-bold text-center mb-14">
+            What We Offer
+          </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {services.map((service, i) => (
               <motion.div
                 key={i}
                 className="border rounded-2xl p-8 hover:shadow-lg transition"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ 
-                  opacity: isServicesInView ? 1 : 0, 
-                  y: isServicesInView ? 0 : 30 
+                animate={{
+                  opacity: isServicesInView ? 1 : 0,
+                  y: isServicesInView ? 0 : 30,
                 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ scale: 1.02 }}
@@ -192,9 +200,7 @@ export default function About() {
                 <div className="text-5xl text-gray-900 mb-6">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">
-                  {service.title}
-                </h3>
+                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                 <p className="text-gray-600">{service.desc}</p>
               </motion.div>
             ))}
@@ -207,9 +213,9 @@ export default function About() {
         ref={processRef}
         className="bg-gray-100 py-20"
         initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ 
-          opacity: isProcessInView ? 1 : 0, 
-          scale: isProcessInView ? 1 : 0.95 
+        animate={{
+          opacity: isProcessInView ? 1 : 0,
+          scale: isProcessInView ? 1 : 0.95,
         }}
         transition={{ duration: 0.6 }}
       >
@@ -226,9 +232,9 @@ export default function About() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: isProcessInView ? 1 : 0, 
-                  y: isProcessInView ? 0 : 20 
+                animate={{
+                  opacity: isProcessInView ? 1 : 0,
+                  y: isProcessInView ? 0 : 20,
                 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
@@ -247,32 +253,30 @@ export default function About() {
         ref={valuesRef}
         className="py-20 bg-gray-100"
         initial={{ opacity: 0, x: 20 }}
-        animate={{ 
-          opacity: isValuesInView ? 1 : 0, 
-          x: isValuesInView ? 0 : 20 
+        animate={{
+          opacity: isValuesInView ? 1 : 0,
+          x: isValuesInView ? 0 : 20,
         }}
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-14">Our Core Values</h2>
+          <h2 className="text-3xl font-bold text-center mb-14">
+            Our Core Values
+          </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {values.map((value, i) => (
               <motion.div
                 key={i}
                 className="bg-white shadow rounded-xl p-8"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ 
-                  opacity: isValuesInView ? 1 : 0, 
-                  y: isValuesInView ? 0 : 30 
+                animate={{
+                  opacity: isValuesInView ? 1 : 0,
+                  y: isValuesInView ? 0 : 30,
                 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="text-4xl mb-4 text-gray-900">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  {value.title}
-                </h3>
+                <div className="text-4xl mb-4 text-gray-900">{value.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
                 <p className="text-gray-600">{value.desc}</p>
               </motion.div>
             ))}
@@ -292,7 +296,9 @@ export default function About() {
         <p className="text-gray-300 mb-8">
           Partner with a team committed to quality, trust, and results.
         </p>
-        <motion.button 
+
+        <motion.button
+          onClick={handleContact}
           className="px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

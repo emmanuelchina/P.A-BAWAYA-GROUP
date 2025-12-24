@@ -42,7 +42,7 @@ export default function Partner() {
             Our Partners & Subsidiaries
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Strategic alliances and owned entities that strengthen the <span className="text-indigo-600">P.A BAWAYA GROUP</span> value chain.
+            Strategic alliances and owned entities that strengthen the <span className="text-indigo-600">P.A. BAWAYA GROUP</span> value chain.
           </p>
         </header>
 
@@ -52,7 +52,7 @@ export default function Partner() {
             Group Subsidiaries
           </h3>
           <p className="text-sm sm:text-base text-slate-600 mb-8">
-            Fully or majority-owned companies operating under the P.A BAWAYA GROUP umbrella.
+            Fully or majority-owned companies operating under the P.A.  BAWAYA GROUP umbrella.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -7,17 +7,21 @@ import Advantage from "./Advantage";
 import Review from "./Review";
 import Info from "./Info";
 import ReadMore from "./Aboutreadmore";
+import ContactPage from "./Contacts";
+import Commitment from "./Commits";
 
 function Display() {
   return (
     <>
       <div>
+      <ContactPage/>
         <Home />
         <ReadMore />
         <Showcase />
         <Services />
         <Partner />
         <Advantage />
+        <Commitment/>
         <Review />
         <Info />
       </div>

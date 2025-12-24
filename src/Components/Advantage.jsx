@@ -56,7 +56,7 @@ export default function Advantage() {
           </h2>{" "}
           <p className="mt-4 text-slate-600">
             {" "}
-            At<span className="text-indigo-600"> P.A Bawaya Group</span> P.A Bawaya Group, we don’t just deliver services — we build
+            At<span className="text-indigo-600"> P.A. Bawaya Group</span>, we don’t just deliver services — we build
             strong partnerships that drive success across multiple industries.{" "}
           </p>{" "}
         </motion.div>

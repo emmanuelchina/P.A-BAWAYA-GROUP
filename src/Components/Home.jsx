@@ -1,5 +1,5 @@
-
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const container = {
@@ -10,7 +10,15 @@ export default function Home() {
       transition: { duration: 0.7, ease: "easeOut" },
     },
   };
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate("/Services");
+  };
+
+  const handleContact = () => {
+    navigate("/Contact");
+  };
   const item = {
     hidden: { opacity: 0, y: 20 },
     visible: (i = 1) => ({
@@ -34,7 +42,7 @@ export default function Home() {
             variants={item}
             className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs sm:text-sm font-medium text-slate-600 shadow-sm"
           >
-            P.A BAWAYA GROUP
+            P.A. BAWAYA GROUP
             <span className="h-1 w-1 rounded-full bg-blue-600" />
             Integrated Solutions
           </motion.p>
@@ -45,9 +53,7 @@ export default function Home() {
             className="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-balance text-slate-900"
           >
             Integrated{" "}
-            <span className="text-blue-600">
-              Business &amp; Industrial
-            </span>{" "}
+            <span className="text-blue-600">Business &amp; Industrial</span>{" "}
             Solutions
           </motion.h1>
 
@@ -57,8 +63,9 @@ export default function Home() {
             className="mt-6 text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
           >
             Delivering excellence across Logistics, Construction, ICT, Oil &amp;
-            Gas, and International Trade connecting ideas, infrastructure, and
-            opportunities for sustainable growth.
+            Gas, and International Trade connecting ideas,
+            infrastructure, AirLine Services and opportunities for sustainable
+            growth.
           </motion.p>
 
           <motion.div
@@ -66,11 +73,17 @@ export default function Home() {
             variants={item}
             className="mt-10 flex flex-wrap justify-center gap-4"
           >
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base shadow-md shadow-blue-500/30">
+            <button
+              onClick={handleClick}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base shadow-md shadow-blue-500/30"
+            >
               Explore our services
             </button>
 
-            <button className="border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base">
+            <button
+              onClick={handleContact}
+              className="border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base"
+            >
               Talk to our team
             </button>
           </motion.div>
@@ -81,7 +94,7 @@ export default function Home() {
             className="mt-10 flex flex-wrap justify-center gap-6 text-xs sm:text-sm text-slate-600"
           >
             <div>
-              <span className="font-semibold text-slate-900">5+ sectors</span>
+              <span className="font-semibold text-slate-900">6+ sectors</span>
               <span className="block text-slate-500">
                 Logistics, ICT, Oil &amp; Gas…
               </span>
@@ -95,9 +108,7 @@ export default function Home() {
               </span>
             </div>
             <div>
-              <span className="font-semibold text-slate-900">
-                Client‑first
-              </span>
+              <span className="font-semibold text-slate-900">Client‑first</span>
               <span className="block text-slate-500">
                 Tailored industrial solutions
               </span>

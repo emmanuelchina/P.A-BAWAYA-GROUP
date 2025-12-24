@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 
 const reviews = [
   {
-    name: "Mr Dominic Ekwe",
+    name: "Mr Elochukwu Igwegbe",
     role: "International Business Owner",
-    text: "P.A BAWAYA GROUP is a top-tier logistics and trade solutions company. They handled everything from product arrival to clearing, saving us time, money, and stress.",
+    text: "P.A. BAWAYA GROUP is a top-tier logistics and trade solutions company. They handled everything from product arrival to clearing, saving us time, money, and stress.",
   },
   {
-    name: "Mr Elochukwu Igwegbe",
+    name: "Jude Odoh",
     role: "Business Investor",
-    text: "P.A BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively.",
+    text: "P.A. BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively.",
   },
   {
     name: "Augustine Owunna",
     role: "Business Owner",
-    text: "Exceptional logistics support from P.A BAWAYA GROUP. They helped bring in our products, managed customs clearing perfectly, and kept us informed throughout the entire process.",
+    text: "Exceptional logistics support from P.A. BAWAYA GROUP. They helped bring in our products, managed customs clearing perfectly, and kept us informed throughout the entire process.",
   },
     {
     name: "Mr Chris Oholi",
@@ -22,12 +22,12 @@ const reviews = [
     text: "Excellent Service from Start to finish.They handled importation, clearing and delivery seamlessly.Professional, reliable, and transparent throughout the process.Highly recommended for stress-free international trade.",
   },
     {
-    name: "Mr Chinedu Nwaku",
+    name: "Mr Dominic Ekwe",
     role: "Business Owner",
-    text: "P.A BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively",
+    text: "P.A. BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively",
   },
     {
-    name: "Mr Sunday Ugwu ",
+    name: "Mr Chinedu Nwaku ",
     role: "Business owner",
     text: "Reliable and efficient importation services. They managed customs clearing, documentation, and delivery. Communication was clear timelines were met, and the entire process was smooth and worry- free.",
   },
@@ -48,7 +48,7 @@ export default function Review() {
           What Our Clients Say
         </motion.h2>
 
-        {/* Reviews */}
+   
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
             <motion.div
@@ -59,7 +59,7 @@ export default function Review() {
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-6 shadow-lg"
             >
-              {/* Stars */}
+            
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-yellow-400 text-xl">
@@ -68,12 +68,12 @@ export default function Review() {
                 ))}
               </div>
 
-              {/* Review text */}
+          
               <p className="text-slate-600 mb-6">
                 “{review.text}”
               </p>
 
-              {/* Author */}
+            
               <div>
                 <h4 className="font-semibold text-slate-900">
                   {review.name}
