@@ -9,8 +9,8 @@ const ReadMore = () => {
        
           <div className="order-last lg:order-first">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 leading-tight">
-            Who Are WE <br></br>
-              Delivering Solution.
+           <br></br>
+              Delivering Solution,
               <br className="hidden sm:block" />
               <span className="block">
                 Building Trust.
