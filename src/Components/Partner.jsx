@@ -8,16 +8,32 @@ export default function Partner() {
     {
       name: "NELLYVAL GROUP",
       role: "Technical Partner",
-      image: "/img/IMG_2775.jpeg",
+      image: "/img/IMG_2775 (3).jpeg",
     },
   ];
+
+  // SEPARATE EDITABLE DESCRIPTIONS
+  const subsidiaryDescriptions = {
+    "GREAT VACATION": [
+      "Visa Services",
+      "Tour & Vacation", 
+      "Airline Ticketing",
+      "Hotel Reservation",
+      "International Passport Facilitation"
+    ],
+    "MOUNTVILLA": [
+      "Road Construction & Rehabilitation",
+      "Building Construction",
+      "Site Preparation & Earthworks",
+      "Renovation & Maintenance Projects",
+      "Manpower & Site Support Services"
+    ]
+  };
 
   const subsidiaries = [
     {
       name: "GREAT VACATION",
       focus: "TRAVELS & TOURS",
-      description:
-        ".Visa Services .Tour & Vacation .Airline Ticketing .Hotel Reservation .International Passport Facilitation",
       email: "greatvacations20@gmail.com",
       phone: "0816 385 7519, 0905 084 5077",
       location: "1st Floor, Akalaka Plaza, 127 Upper chime Enugu, Enugu State",  
@@ -26,13 +42,21 @@ export default function Partner() {
     {
       name: "MOUNTVILLA",
       focus: "CONSTRUCTIONS",
-      description:
-        ".Road Construction & Rehabilitation .Building Construction .Site Preparation & Earthworks .Renovation & Maintenance Projects .Manpower & Site Support Services",
       phone: "0803 708 3514",
       location: "Plot 883 Olu Awotesu Street, Jabi-Abuja", 
       image: "/img/Orange White Modern Construction Logo (1).png"
     },
   ];
+
+  // HELPER FUNCTION TO RENDER DESCRIPTION
+  const renderDescription = (subName) => {
+    const services = subsidiaryDescriptions[subName] || [];
+    return services.map((service, index) => (
+      <span key={index} className="font-bold text-gray-700 block">
+        .{service}
+      </span>
+    ));
+  };
 
   return (
     <section className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
@@ -52,7 +76,7 @@ export default function Partner() {
             Group Subsidiaries
           </h3>
           <p className="text-sm sm:text-base text-slate-600 mb-8">
-            Fully or majority-owned companies operating under the P.A.  BAWAYA GROUP umbrella.
+            Fully or majority-owned companies operating under the P.A. BAWAYA GROUP umbrella.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -76,9 +100,11 @@ export default function Partner() {
                 <p className="text-xs font-semibold uppercase tracking-wide text-blue-600 mb-3">
                   {sub.focus}
                 </p>
-                <p className="mt-3 text-sm text-slate-600 mb-6 leading-relaxed">
-                  {sub.description}
-                </p>
+                
+                {/* SEPARATE DESCRIPTION RENDERING */}
+                <div className="mt-3 mb-6 space-y-1 leading-relaxed ">
+                  {renderDescription(sub.name)}
+                </div>
                 
                 {/* Contact info - Conditional email display */}
                 <div className="pt-4 border-t border-slate-200">

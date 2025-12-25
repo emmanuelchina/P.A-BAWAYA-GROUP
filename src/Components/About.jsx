@@ -13,7 +13,7 @@ import {
   FaPlane,
 } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const stats = [
@@ -94,21 +94,23 @@ export default function About() {
   const valuesRef = useRef(null);
   const ctaRef = useRef(null);
 
-  const isHeroInView = useInView(heroRef, { once: false, amount: 0.3 });
-  const isWhoInView = useInView(whoWeAreRef, { once: false, amount: 0.3 });
-  const isServicesInView = useInView(servicesRef, { once: false, amount: 0.3 });
-  const isProcessInView = useInView(processRef, { once: false, amount: 0.3 });
-  const isValuesInView = useInView(valuesRef, { once: false, amount: 0.3 });
-  const isCtaInView = useInView(ctaRef, { once: false, amount: 0.3 });
+  const isHeroInView = useInView(heroRef, { once: true, amount: 0.2 });
+  const isWhoInView = useInView(whoWeAreRef, { once: true, amount: 0.2 });
+  const isServicesInView = useInView(servicesRef, { once: true, amount: 0.2 });
+  const isProcessInView = useInView(processRef, { once: true, amount: 0.2 });
+  const isValuesInView = useInView(valuesRef, { once: true, amount: 0.2 });
+  const isCtaInView = useInView(ctaRef, { once: true, amount: 0.2 });
+
   const handleContact = () => {
     navigate("/Contact");
   };
+
   return (
-    <section className="w-full bg-gray-100 text-gray-800">
+    <main className="w-full bg-gradient-to-b from-gray-50 via-gray-100 to-white min-h-screen text-gray-800 overflow-hidden">
       {/* HERO */}
-      <motion.div
+      <motion.section
         ref={heroRef}
-        className="bg-gray-900 text-white py-24 text-center"
+        className="bg-gray-900 text-white py-24 text-center min-h-[60vh] flex items-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{
           opacity: isHeroInView ? 1 : 0,
@@ -116,26 +118,28 @@ export default function About() {
         }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{
-            scale: isHeroInView ? 1 : 0.8,
-            opacity: isHeroInView ? 1 : 0,
-          }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <FaBuilding className="mx-auto text-7xl mb-6 opacity-80" />
-          <h1 className="text-4xl md:text-5xl font-bold">P.A. Bawaya Group</h1>
-          <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-            Delivering Solutions. Building Trust.
-          </p>
-        </motion.div>
-      </motion.div>
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{
+              scale: isHeroInView ? 1 : 0.8,
+              opacity: isHeroInView ? 1 : 0,
+            }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <FaBuilding className="mx-auto text-7xl mb-6 opacity-80" />
+            <h1 className="text-4xl md:text-5xl font-bold">P.A. Bawaya Group</h1>
+            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+              Delivering Solutions. Building Trust.
+            </p>
+          </motion.div>
+        </div>
+      </motion.section>
 
       {/* WHO WE ARE */}
-      <motion.div
+      <motion.section
         ref={whoWeAreRef}
-        className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14"
+        className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-14"
         initial={{ opacity: 0, x: -20 }}
         animate={{
           opacity: isWhoInView ? 1 : 0,
@@ -145,8 +149,8 @@ export default function About() {
       >
         <div>
           <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
-          <p className="text-gray-600 leading-relaxed">
-            <span className="text-indigo-600"> P.A. Bawaya Group</span> is a
+          <p className="text-gray-600 leading-relaxed text-lg">
+            <span className="text-indigo-600">P.A. Bawaya Group</span> is a
             multi-service company providing professional solutions across
             logistics, construction, ICT & technology, oil and gas, and
             international trade. We are driven by excellence, confidentiality,
@@ -157,7 +161,7 @@ export default function About() {
           {stats.map((stat, i) => (
             <motion.div
               key={i}
-              className="bg-white shadow rounded-xl p-6 text-center"
+              className="bg-white shadow-lg rounded-xl p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{
                 opacity: isWhoInView ? 1 : 0,
@@ -165,30 +169,38 @@ export default function About() {
               }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <h3 className="text-3xl font-bold text-gray-900">{stat.value}</h3>
-              <p className="text-gray-500 mt-2">{stat.label}</p>
+              <h3 className="text-4xl font-bold text-gray-900 mb-2">{stat.value}</h3>
+              <p className="text-gray-500 font-medium">{stat.label}</p>
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </motion.section>
 
       {/* SERVICES */}
-      <motion.div
+      <motion.section
         ref={servicesRef}
-        className="bg-gray-100 py-20"
+        className="py-24"
         initial={{ opacity: 0 }}
         animate={{ opacity: isServicesInView ? 1 : 0 }}
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-14">
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: isServicesInView ? 1 : 0,
+              y: isServicesInView ? 0 : 20,
+            }}
+            transition={{ duration: 0.6 }}
+          >
             What We Offer
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          </motion.h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, i) => (
               <motion.div
                 key={i}
-                className="border rounded-2xl p-8 hover:shadow-lg transition"
+                className="bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{
                   opacity: isServicesInView ? 1 : 0,
@@ -197,21 +209,21 @@ export default function About() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="text-5xl text-gray-900 mb-6">
+                <div className="text-5xl text-indigo-600 mb-6 flex justify-center">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.desc}</p>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center">{service.title}</h3>
+                <p className="text-gray-600 text-center leading-relaxed">{service.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </motion.div>
+      </motion.section>
 
       {/* PROCESS */}
-      <motion.div
+      <motion.section
         ref={processRef}
-        className="bg-gray-100 py-20"
+        className="py-24 bg-gradient-to-b from-white to-gray-50"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{
           opacity: isProcessInView ? 1 : 0,
@@ -219,8 +231,18 @@ export default function About() {
         }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-14">How We Work</h2>
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: isProcessInView ? 1 : 0,
+              y: isProcessInView ? 0 : 20,
+            }}
+            transition={{ duration: 0.6 }}
+          >
+            How We Work
+          </motion.h2>
           <div className="grid md:grid-cols-5 gap-8 text-center">
             {[
               "Consultation",
@@ -231,6 +253,7 @@ export default function About() {
             ].map((step, i) => (
               <motion.div
                 key={i}
+                className="group"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{
                   opacity: isProcessInView ? 1 : 0,
@@ -238,20 +261,20 @@ export default function About() {
                 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-gray-900 text-white text-xl font-bold mb-4">
+                <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xl font-bold mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
                   {i + 1}
                 </div>
-                <p className="font-medium">{step}</p>
+                <p className="font-semibold text-lg text-gray-900 group-hover:text-indigo-600 transition-colors">{step}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </motion.div>
+      </motion.section>
 
       {/* VALUES */}
-      <motion.div
+      <motion.section
         ref={valuesRef}
-        className="py-20 bg-gray-100"
+        className="py-24"
         initial={{ opacity: 0, x: 20 }}
         animate={{
           opacity: isValuesInView ? 1 : 0,
@@ -260,14 +283,22 @@ export default function About() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-14">
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-gray-900 via-indigo-600 to-purple-600 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: isValuesInView ? 1 : 0,
+              y: isValuesInView ? 0 : 20,
+            }}
+            transition={{ duration: 0.6 }}
+          >
             Our Core Values
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          </motion.h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, i) => (
               <motion.div
                 key={i}
-                className="bg-white shadow rounded-xl p-8"
+                className="bg-white shadow-lg rounded-xl p-8 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-indigo-200"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{
                   opacity: isValuesInView ? 1 : 0,
@@ -275,37 +306,60 @@ export default function About() {
                 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="text-4xl mb-4 text-gray-900">{value.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.desc}</p>
+                <div className="text-5xl mb-6 text-indigo-500 flex justify-center">{value.icon}</div>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center">{value.title}</h3>
+                <p className="text-gray-600 text-center leading-relaxed">{value.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </motion.div>
+      </motion.section>
 
       {/* CTA */}
-      <motion.div
+      <motion.section
         ref={ctaRef}
-        className="bg-gray-900 text-white py-20 text-center"
+        className="bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 text-white py-24 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: isCtaInView ? 1 : 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-bold mb-6">Ready to Work With Us?</h2>
-        <p className="text-gray-300 mb-8">
-          Partner with a team committed to quality, trust, and results.
-        </p>
+        <div className="max-w-3xl mx-auto px-6">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent drop-shadow-lg"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: isCtaInView ? 1 : 0.9 }}
+            transition={{ duration: 0.6 }}
+          >
+            Ready to Work With Us?
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-300 mb-12 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: isCtaInView ? 1 : 0,
+              y: isCtaInView ? 0 : 20,
+            }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Partner with a team committed to quality, trust, and results.
+          </motion.p>
 
-        <motion.button
-          onClick={handleContact}
-          className="px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Contact Us
-        </motion.button>
-      </motion.div>
-    </section>
+          <motion.button
+            onClick={handleContact}
+            className="px-12 py-4 bg-white text-gray-900 font-bold text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl border-4 border-white/20 hover:border-white"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{
+              scale: isCtaInView ? 1 : 0.95,
+              opacity: isCtaInView ? 1 : 0,
+            }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+          >
+            Contact Us
+          </motion.button>
+        </div>
+      </motion.section>
+    </main>
   );
 }

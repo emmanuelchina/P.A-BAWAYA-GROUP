@@ -24,13 +24,19 @@ const reviews = [
     {
     name: "Mr Dominic Ekwe",
     role: "Business Owner",
-    text: "P.A. BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively",
+    text:" Working with P.A BAWAYA GROUP was a game-changer. They simplified international shipping, handled all documentation, and delivered our goods safely without delays.",
   },
     {
     name: "Mr Chinedu Nwaku ",
     role: "Business owner",
     text: "Reliable and efficient importation services. They managed customs clearing, documentation, and delivery. Communication was clear timelines were met, and the entire process was smooth and worry- free.",
   },
+   {
+    name: "Mr Emmanuel Danjuma",
+    role: "Business Owner",
+    text: "P.A. BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively",
+  },
+  
 ];
 
 export default function Review() {

@@ -166,7 +166,7 @@ const navigate = useNavigate();
         >
           <button
            onClick={handleContact}
-            className="group inline-flex items-center gap-4 px-12 py-6 bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 text-white font-bold text-xl rounded-3xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 hover:from-indigo-700 hover:via-blue-700 hover:to-purple-700"
+            className="group inline-flex items-center gap-4 px-12 py-6 bg-blue-600 to-purple-600 text-white font-bold text-xl rounded-3xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 hover:from-indigo-700 hover:via-blue-700 hover:to-purple-700"
           >
             <span>Start Your Project Today</span>
             <FaRocket className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />

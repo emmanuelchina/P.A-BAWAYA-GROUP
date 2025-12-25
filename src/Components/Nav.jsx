@@ -12,7 +12,7 @@ isActive
 }`;
 
 return (
-<nav className="bg-cover   bg-center  w-full   shadow-md  sticky top-0 z-50 ">
+<nav className="  bg-center  w-full bg-gray-200  shadow-md  sticky top-0 z-50 ">
 <div className="max-w-7xl mx-auto px-4">
 
 <div className="flex justify-between items-center h-16">
@@ -33,8 +33,8 @@ P.A. BAWAYA <br></br> GROUP
 <div className="hidden md:flex space-x-4">
 <NavLink to="/" end className={linkClass}>Home</NavLink>
 <NavLink to="/About" className={linkClass}>About</NavLink>
-<NavLink to="/services" className={linkClass}>Services</NavLink>
-<NavLink to="/contact" className={linkClass}>Contact</NavLink>
+<NavLink to="/Services" className={linkClass}>Services</NavLink>
+<NavLink to="/Contact" className={linkClass}>Contact</NavLink>
 </div>
 
 {/* Mobile menu button */}
@@ -71,9 +71,9 @@ d="M4 6h16M4 12h16M4 18h16"
 {open && (
 <div className="md:hidden pb-4 space-y-2">
 <NavLink onClick={() => setOpen(false)} to="/" end className={linkClass}>Home</NavLink>
-<NavLink onClick={() => setOpen(false)} to="/about" className={linkClass}>About</NavLink>
-<NavLink onClick={() => setOpen(false)} to="/services" className={linkClass}>Services</NavLink>
-<NavLink onClick={() => setOpen(false)} to="/contact" className={linkClass}>Contact</NavLink>
+<NavLink onClick={() => setOpen(false)} to="/About" className={linkClass}>About</NavLink>
+<NavLink onClick={() => setOpen(false)} to="/Services" className={linkClass}>Services</NavLink>
+<NavLink onClick={() => setOpen(false)} to="/Contact" className={linkClass}>Contact</NavLink>
 </div>
 )}
 </div>

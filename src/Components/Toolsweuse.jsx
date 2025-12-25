@@ -140,7 +140,7 @@ export default function ToolsTechnologies() {
         >
           <div
              onClick={handleContact}
-           className="inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl text-white font-semibold text-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:scale-105 cursor-pointer">
+           className="inline-flex items-center gap-3 px-12 py-6 bg-blue-600 rounded-3xl text-white font-semibold text-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:scale-105 cursor-pointer">
             <FaRocket className="w-6 h-6" />
             Ready to Transform Your Business?
           </div>

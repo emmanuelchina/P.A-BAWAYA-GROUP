@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { 
+  MapPin, 
+  Phone, 
+  Mail 
+} from "lucide-react"; // npm i lucide-react
 
 const Info = () => {
   const [loading, setLoading] = useState(false);
@@ -9,8 +14,19 @@ const Info = () => {
     lastName: '',
     email: '',
     phone: '',
+    service: '',
     message: ''
   });
+
+  const services = [
+    { value: '', label: 'Select a service...' },
+    { value: 'Logistics Solutions', label: 'Logistics Solutions' },
+    { value: 'Construction & Site Jobs', label: 'Construction & Site Jobs' },
+    { value: 'ICT & Technology', label: 'ICT & Technology' },
+    { value: 'Oil & Gas Services', label: 'Oil & Gas Services' },
+    { value: 'International Trade', label: 'International Trade' },
+    { value: 'Airline Services', label: 'Airline Services' }
+  ];
 
   const handleChange = (e) => {
     setFormData({
@@ -25,11 +41,12 @@ const Info = () => {
     setMessage('');
 
     const submitData = new FormData();
-    submitData.append('access_key', '337bb2f6-b507-470b-b38d-17725ebebd1f');
+     submitData.append('access_key', '4e3d3a25-fb70-4783-a6b3-1cc697ed5340');
     submitData.append('firstName', formData.firstName);
     submitData.append('lastName', formData.lastName);
     submitData.append('email', formData.email);
     submitData.append('phone', formData.phone);
+    submitData.append('service', formData.service);
     submitData.append('message', formData.message);
     submitData.append('from_name', 'P.A. Bawaya Group');
 
@@ -43,8 +60,15 @@ const Info = () => {
 
       if (json.success) {
         setIsSuccess(true);
-        setMessage('✅ You have Contacted P.A. Bawaya Group! We\'ll get back to you within 2 hours.');
-        setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+        setMessage('✅ You have Contacted P.A. Bawaya Group! We\'ll get back to you ASAP.');
+        setFormData({ 
+          firstName: '', 
+          lastName: '', 
+          email: '', 
+          phone: '', 
+          service: '',
+          message: '' 
+        });
       } else {
         setMessage('❌ ' + (json.message || 'Something went wrong. Please try again.'));
       }
@@ -56,56 +80,70 @@ const Info = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-      <div className="max-w-6xl w-full bg-white shadow-sm rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-gray-50 p-10 md:p-14 flex flex-col justify-between">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-12">
+      <div className="max-w-6xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+        {/* Left side - Info with Icons */}
+        <div className="bg-gradient-to-br from-gray-50 to-blue-50/50 p-10 md:p-14 flex flex-col justify-between relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5" />
+          
+          <div className="relative z-10">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 drop-shadow-sm">
               Get in touch
             </h1>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-600 leading-relaxed mb-12 max-w-lg">
               Our company offers end-to-end solutions in logistics, construction, ICT, oil and gas, international trade, and airline services built to help businesses operate smoothly and grow.
             </p>
           </div>
 
-          <div className="mt-10 space-y-6 text-gray-700">
-            <div className="flex items-start gap-3">
-              <span className="mt-1 text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21h18M5 21V7a2 2 0 012-2h4a2 2 0 012 2v14M13 21V11a2 2 0 012-2h2a2 2 0 012 2v10M9 9h.01M9 13h.01M9 17h.01M17 13h.01M17 17h.01" />
-                </svg>
-              </span>
-              <div>
-                <p className="font-medium">251/252 BLESSED LINE ATDA-NKPOR</p>
-                <p>ONITSHA ANAMBRA STATE-NIGERIA</p>
+          <div className="mt-8 space-y-6 relative z-10">
+            {/* Address */}
+            <div className="group flex items-start gap-4 p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-200/50 hover:border-blue-200 hover:bg-white/80 transition-all duration-300 hover:shadow-md">
+              <div className="flex-shrink-0 mt-1 p-2 bg-white/80 rounded-xl shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <MapPin className="h-6 w-6 text-indigo-600" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-gray-900 text-lg">251/252 BLESSED LINE ATDA-NKPOR</p>
+                <p className="text-gray-700 mt-1">ONITSHA ANAMBRA STATE-NIGERIA</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-2.1a1.5 1.5 0 00-1.264-1.48l-3.36-.56a1.5 1.5 0 00-1.3.43l-1.2 1.2a.75.75 0 01-.8.18 11.25 11.25 0 01-6.67-6.67.75.75 0 01.18-.8l1.2-1.2a1.5 1.5 0 00.43-1.3l-.56-3.36A1.5 1.5 0 006.6 2.25h-2.1A2.25 2.25 0 002.25 4.5v2.25z" />
-                </svg>
-              </span>
-              <p>+234 803 337 4082</p>
-            </div>
+            {/* Phone - Clickable */}
+            <a 
+              href="tel:+2348033374082"
+              className="group flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 to-green-50 hover:from-emerald-100 hover:to-green-100 border border-emerald-200/50 hover:border-emerald-300 hover:shadow-md transition-all duration-300 block"
+            >
+              <div className="flex-shrink-0 p-2 bg-emerald-100/80 rounded-xl shadow-sm group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300">
+                <Phone className="h-6 w-6 text-emerald-600" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900 text-lg group-hover:text-emerald-700 transition-colors">+234 803 337 4082</p>
+                <p className="text-sm text-gray-600 group-hover:text-emerald-600 transition-colors">Tap to call</p>
+              </div>
+            </a>
 
-            <div className="flex items-center gap-3">
-              <span className="text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7.5l8.25 5.25L19.5 7.5M4.5 5.25h15A1.5 1.5 0 0121 6.75v10.5a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 17.25V6.75a1.5 1.5 0 011.5-1.5z" />
-                </svg>
-              </span>
-              <p>Aniekwebawaya4@gmail.com</p>
-            </div>
+            {/* Email - Clickable */}
+            <a 
+              href="mailto:Aniekwebawaya4@gmail.com"
+              className="group flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 border border-blue-200/50 hover:border-blue-300 hover:shadow-md transition-all duration-300 block"
+            >
+              <div className="flex-shrink-0 p-2 bg-blue-100/80 rounded-xl shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <Mail className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900 text-lg group-hover:text-blue-700 transition-colors break-all">
+                  Aniekwebawaya4@gmail.com
+                </p>
+                <p className="text-sm text-gray-600 group-hover:text-blue-600 transition-colors">Send email</p>
+              </div>
+            </a>
           </div>
         </div>
 
         {/* Right side – form */}
-        <div className="p-10 md:p-14 bg-white">
+        <div className="p-10 md:p-14 bg-white/90 backdrop-blur-sm">
           <form className="space-y-6" onSubmit={onSubmit}>
             {message && (
-              <div className={`p-4 rounded-lg text-sm border transition-all mb-6 ${
+              <div className={`p-4 rounded-2xl text-sm border transition-all mb-6 shadow-sm ${
                 isSuccess
                   ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
                   : 'bg-red-50 border-red-200 text-red-800'
@@ -116,7 +154,7 @@ const Info = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
                   First name
                 </label>
                 <input
@@ -126,12 +164,12 @@ const Info = () => {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:ring-indigo-500 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  className="w-full rounded-2xl border-2 border-gray-200 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 bg-gray-50/50 hover:bg-gray-50 disabled:bg-gray-100 disabled:cursor-not-allowed"
                   disabled={loading}
                 />
               </div>
               <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
                   Last name
                 </label>
                 <input
@@ -141,30 +179,61 @@ const Info = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:ring-indigo-500 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  className="w-full rounded-2xl border-2 border-gray-200 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 bg-gray-50/50 hover:bg-gray-50 disabled:bg-gray-100 disabled:cursor-not-allowed"
                   disabled={loading}
                 />
               </div>
             </div>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:ring-indigo-500 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-                disabled={loading}
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-2xl border-2 border-gray-200 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 bg-gray-50/50 hover:bg-gray-50 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  disabled={loading}
+                />
+              </div>
+
+              {/* SERVICE SELECT INPUT */}
+              <div>
+                <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Service needed
+                </label>
+                <div className="relative">
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    disabled={loading}
+                    className="w-full appearance-none rounded-2xl border-2 border-gray-200 px-4 py-3 pr-10 text-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 bg-gray-50/50 hover:bg-gray-50 disabled:bg-gray-100 disabled:cursor-not-allowed cursor-pointer"
+                  >
+                    {services.map((service, index) => (
+                      <option key={index} value={service.value}>
+                        {service.label}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                 Phone number
               </label>
               <input
@@ -177,13 +246,13 @@ const Info = () => {
                 maxLength={15}
                 pattern="[0-9+\-\s]*"
                 placeholder="+234 810 000 0000"
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:ring-indigo-500 outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                className="w-full rounded-2xl border-2 border-gray-200 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all duration-200 bg-gray-50/50 hover:bg-gray-50 disabled:bg-gray-100 disabled:cursor-not-allowed"
                 disabled={loading}
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                 Message
               </label>
               <textarea
@@ -193,7 +262,7 @@ const Info = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:ring-indigo-500 outline-none resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                className="w-full rounded-2xl border-2 border-gray-200 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none resize-none transition-all duration-200 bg-gray-50/50 hover:bg-gray-50 disabled:bg-gray-100 disabled:cursor-not-allowed"
                 disabled={loading}
               />
             </div>
@@ -202,19 +271,23 @@ const Info = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-indigo-400 disabled:opacity-50 w-full md:w-auto"
+                className="group relative w-full md:w-auto inline-flex items-center justify-center rounded-2xl bg-blue-600 px-8 py-4 text-sm font-bold text-white hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-500/20 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 disabled:cursor-not-allowed disabled:from-indigo-400 disabled:opacity-50 overflow-hidden"
               >
-                {loading ? (
-                  <>
-                    <svg className="mr-2 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                    </svg>
-                    Sending...
-                  </>
-                ) : (
-                  'Send message'
-                )}
+                <span className="relative z-10 flex items-center gap-2">
+                  {loading ? (
+                    <>
+                      <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send message
+                    </>
+                  )}
+                </span>
               </button>
             </div>
           </form>

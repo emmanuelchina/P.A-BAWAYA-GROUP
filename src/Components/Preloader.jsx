@@ -5,7 +5,7 @@ return (
 
 
 <img
-src="/img/IMG_2726.png"
+src="/img/IMG_2800.jpeg"
 alt="Company Logo"
 className="w-20 mb-4"
 />
