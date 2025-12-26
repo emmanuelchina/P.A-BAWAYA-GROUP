@@ -45,9 +45,9 @@ export default function Review() {
         
         {/* REVIEWS BADGE - ONLY ADDITION */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
+          <div className="inline-flex items-center gap-2 px-8 py-1 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
             <span className="text-2xl">⭐</span>
-            <span className="text-lg font-bold text-slate-900 tracking-wide uppercase">
+            <span className="text-sm font-bold text-slate-900 tracking-wide uppercase">
               Reviews
             </span>
           </div>
@@ -59,7 +59,7 @@ export default function Review() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center text-3xl md:text-4xl font-bold text-slate-900"
+          className="text-center text-2xl md:text-4xl font-bold text-slate-900"
         >
           What Our Clients Say
         </motion.h2>

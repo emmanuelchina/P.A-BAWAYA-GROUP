@@ -65,9 +65,9 @@ export default function Industry() {
 
         {/* INDUSTRIES WE SERVE BADGE - ONLY ADDITION */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
+          <div className="inline-flex items-center gap-2 px-8 py-1 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
             <span className="text-2xl">🌐</span>
-            <span className="text-lg font-bold text-slate-900 tracking-wide uppercase">
+            <span className="text-sm font-bold text-slate-900 tracking-wide uppercase">
               Industries We Serve
             </span>
           </div>
@@ -75,7 +75,7 @@ export default function Industry() {
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
           Serving Diverse Industries
 
 
@@ -113,7 +113,7 @@ export default function Industry() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={handleContact}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700 transition w-60"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700 transition w-67"
             >
               Request a Consultation
             </button>

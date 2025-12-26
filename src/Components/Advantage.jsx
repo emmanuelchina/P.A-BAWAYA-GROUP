@@ -42,9 +42,9 @@ export default function Advantage() {
         
         {/* WORK WITH US BADGE - ONLY ADDITION */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
+          <div className="inline-flex items-center gap-2 px-8 py-1 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
             <span className="text-2xl">🤝</span>
-            <span className="text-lg font-bold text-slate-900 tracking-wide uppercase">
+            <span className="text-sm font-bold text-slate-900 tracking-wide uppercase">
               Work With Us
             </span>
           </div>
@@ -58,7 +58,7 @@ export default function Advantage() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-slate-900">
+          <h2 className="text-3xl font-bold text-slate-900">
           Driven by Excellence
           </h2>
           <p className="mt-4 text-slate-600">
