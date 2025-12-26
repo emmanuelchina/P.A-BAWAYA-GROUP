@@ -38,10 +38,19 @@ const reasons = [
 export default function Advantage() {
   return (
     <section className="py-20 bg-gray-100">
-      {" "}
       <div className="max-w-7xl mx-auto px-6">
-        {" "}
-        {/* Header */}{" "}
+        
+        {/* WORK WITH US BADGE - ONLY ADDITION */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
+            <span className="text-2xl">🤝</span>
+            <span className="text-lg font-bold text-slate-900 tracking-wide uppercase">
+              Work With Us
+            </span>
+          </div>
+        </div>
+
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,17 +58,15 @@ export default function Advantage() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          {" "}
           <h2 className="text-4xl font-bold text-slate-900">
-            {" "}
-            Work <span className="text-blue-600">With Us</span>{" "}
-          </h2>{" "}
+          Driven by Excellence
+          </h2>
           <p className="mt-4 text-slate-600">
-            {" "}
-            At<span className="text-indigo-600"> P.A. Bawaya Group</span>, we don’t just deliver services — we build
-            strong partnerships that drive success across multiple industries.{" "}
-          </p>{" "}
+          We combine industry expertise, strategic insight, and a client-focused approach to deliver reliable solutions that create long-term value for our partners.
+
+          </p>
         </motion.div>
+
         {/* Cards */}
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((item, index) => (
@@ -83,6 +90,7 @@ export default function Advantage() {
             </motion.div>
           ))}
         </div>
+
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -92,13 +100,12 @@ export default function Advantage() {
           className="mt-20 text-center"
         >
           <h3 className="text-2xl font-semibold text-slate-900">
-            Let’s Build Success Together
+            Let's Build Success Together
           </h3>
           <p className="mt-3 text-slate-600 max-w-xl mx-auto">
-            Whether you’re a client, partner, or professional looking to
-            collaborate, we’re ready to work with you.
+            Whether you're a client, partner, or professional looking to
+            collaborate, we're ready to work with you.
           </p>
-       
         </motion.div>
       </div>
     </section>

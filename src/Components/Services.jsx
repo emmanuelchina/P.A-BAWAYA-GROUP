@@ -4,10 +4,11 @@ import {
   FaLaptopCode,
   FaOilCan,
   FaGlobe,
-  FaPlane, // Added for Airline Services
+  FaPlane,
 } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 const services = [
   {
@@ -43,13 +44,29 @@ const services = [
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -40 },
+  hidden: { 
+    opacity: 0, 
+    y: 40 
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0 
+  },
 };
 
 export default function Services() {
   const navigate = useNavigate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px 0px -100px 0px" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
 
   const handleClick = () => {
     navigate("/Services");
@@ -58,23 +75,62 @@ export default function Services() {
   return (
     <section className="relative bg-gray-100 py-20 px-4 overflow-hidden">
       <div className="absolute " />
-      <div className="relative max-w-7xl mx-auto">
+      <motion.div 
+        ref={ref}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { 
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.15,
+              delayChildren: 0.4  // DELAY STARTS AFTER EXPERTISE BADGE
+            }
+          }
+        }}
+        initial="hidden"
+        animate={controls}
+        className="relative max-w-7xl mx-auto"
+      >
+        {/* EXPERTISE BADGE - APPEARS FIRST */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.6 }}
-          transition={{ duration: 0.6 }}
+          variants={{
+            hidden: { scale: 0.5, opacity: 0, y: -20 },
+            visible: { 
+              scale: 1, 
+              opacity: 1, 
+              y: 0,
+              transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 20,
+                delay: 0.1  // APPEARS FIRST - 0.1s delay
+              }
+            }
+          }}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center gap-2 px-8 py-4 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl hover:shadow-3xl transition-all duration-500 mx-auto max-w-max">
+            <span className="text-xl">⭐</span>
+            <span className="text-lg font-bold text-slate-900 tracking-wide uppercase">
+              Our Expertise
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Header - appears AFTER expertise badge */}
+        <motion.div
+          variants={cardVariants}
           className="text-center mb-16"
         >
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-slate-900">
             Smart Services for Global Business
           </h2>
           <p className="mt-4 text-slate-900 max-w-2xl mx-auto">
-            We provide cutting-edge solutions, unparalleled proficiency, and
-            exceptional outcomes.
+          We deliver smart, results driven services backed by industry expertise and a commitment to exceptional outcomes.
           </p>
         </motion.div>
 
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -84,7 +140,7 @@ export default function Services() {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.4 }}
+                viewport={{ amount: 0.4 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="group relative rounded-2xl bg-white backdrop-blur border border-white/10 p-6 hover:bg-gray-300 transition"
               >
@@ -103,22 +159,20 @@ export default function Services() {
           })}
         </div>
 
+        {/* CTA Button */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6 }}
+          variants={cardVariants}
           className="mt-16 text-center"
         >
           <button
             onClick={handleClick}
             className="
-          inline-flex items-center gap-2 rounded-full bg-slate-500 px-8 py-3 font-semibold text-white hover:bg-gray-400 transition"
+            inline-flex items-center gap-2 rounded-full bg-slate-500 px-8 py-3 font-semibold text-white hover:bg-gray-400 transition"
           >
             Explore This Service
           </button>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,8 +1,8 @@
 export default function Commitment() {
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24 px-6">
+    <section className="relative bg-gray-100  py-24 px-6">
       <div className="mx-auto max-w-4xl">
-        <div className="group rounded-3xl border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+        <div className="group rounded-3xl border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           
           <h2 className="mb-6 text-3xl font-bold tracking-wide text-white md:text-4xl">
             Our Commitment

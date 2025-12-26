@@ -11,10 +11,12 @@ import {
   FaHandshake,
   FaCheckCircle,
   FaPlane,
+  FaAward
 } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import MissionVision from "./Mission";
 
 const stats = [
   { value: "20+", label: "Years Experience" },
@@ -94,7 +96,6 @@ export default function About() {
   const valuesRef = useRef(null);
   const ctaRef = useRef(null);
 
-  const isHeroInView = useInView(heroRef, { once: true, amount: 0.2 });
   const isWhoInView = useInView(whoWeAreRef, { once: true, amount: 0.2 });
   const isServicesInView = useInView(servicesRef, { once: true, amount: 0.2 });
   const isProcessInView = useInView(processRef, { once: true, amount: 0.2 });
@@ -107,31 +108,108 @@ export default function About() {
 
   return (
     <main className="w-full bg-gradient-to-b from-gray-50 via-gray-100 to-white min-h-screen text-gray-800 overflow-hidden">
-      {/* HERO */}
+      {/* HERO - Always Active Continuous Motion */}
       <motion.section
-        ref={heroRef}
-        className="bg-gray-900 text-white py-24 text-center min-h-[60vh] flex items-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: isHeroInView ? 1 : 0,
-          y: isHeroInView ? 0 : 20,
-        }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="bg-gray-900 text-white py-24 text-center h-80 flex items-center relative overflow-hidden"
       >
-        <div className="max-w-4xl mx-auto px-6">
+        {/* Floating Background Particles */}
+        <div className="absolute inset-0">
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
+            className="absolute top-10 left-10 w-2 h-2 bg-white/20 rounded-full"
             animate={{
-              scale: isHeroInView ? 1 : 0.8,
-              opacity: isHeroInView ? 1 : 0,
+              y: [0, -20, 0],
+              opacity: [0.5, 1, 0.5],
             }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute top-20 right-20 w-3 h-3 bg-indigo-400/30 rounded-full"
+            animate={{
+              y: [0, 15, 0],
+              x: [-10, 10, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 left-1/4 w-1 h-1 bg-white/10 rounded-full"
+            animate={{
+              y: [0, -10, 0],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0, rotateX: -10 }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+              rotateX: 0,
+            }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            <FaBuilding className="mx-auto text-7xl mb-6 opacity-80" />
-            <h1 className="text-4xl md:text-5xl font-bold">P.A. Bawaya Group</h1>
-            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-              Delivering Solutions. Building Trust.
-            </p>
+            {/* Pulsing Award Icon */}
+            <motion.div
+              animate={{
+                scale: [1, 1.1, 1],
+                rotate: [0, 5, -5, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <FaAward className="mx-auto text-7xl mb-6 opacity-80 drop-shadow-2xl" />
+            </motion.div>
+            
+            {/* Continuous Breathing Title */}
+            <motion.h1 
+              className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-slate-900 via-white to-slate-700 bg-clip-text text-transparent leading-tight drop-shadow-lg"
+              animate={{
+                scale: [1, 1.02, 1],
+                y: [0, -2, 0],
+                opacity: [1, 0.95, 1],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              About Our Company
+            </motion.h1>
+            
+            {/* Floating Subtitle */}
+            <motion.p
+              className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto"
+              animate={{
+                y: [0, -3, 0],
+                opacity: [1, 0.9, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              Driven by Excellence
+            </motion.p>
           </motion.div>
         </div>
       </motion.section>
@@ -150,11 +228,16 @@ export default function About() {
         <div>
           <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
           <p className="text-gray-600 leading-relaxed text-lg">
-            <span className="text-indigo-600">P.A. Bawaya Group</span> is a
-            multi-service company providing professional solutions across
-            logistics, construction, ICT & technology, oil and gas, and
-            international trade. We are driven by excellence, confidentiality,
-            and results.
+            <span className="text-indigo-600">P.A. Bawaya Group</span><br></br>
+            Founded in 2002 and incorporated with RC number 456212, P.A. Bawaya
+            International Limited began with modest operations fulfilling
+            essential consumer demands. Over the years, it expanded into
+            regional and global business delivery, diversifying into vital
+            sectors like logistics, construction, ICT/tech, oil/gas, airline
+            services, and international trade. The company excels at serving
+            local and foreign investors in both large- and small-scale ventures
+            by partnering with strategic allies worldwide for swift, dependable
+            services.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6">
@@ -169,7 +252,9 @@ export default function About() {
               }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <h3 className="text-4xl font-bold text-gray-900 mb-2">{stat.value}</h3>
+              <h3 className="text-4xl font-bold text-gray-900 mb-2">
+                {stat.value}
+              </h3>
               <p className="text-gray-500 font-medium">{stat.label}</p>
             </motion.div>
           ))}
@@ -185,7 +270,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <motion.h2 
+          <motion.h2
             className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{
@@ -212,8 +297,12 @@ export default function About() {
                 <div className="text-5xl text-indigo-600 mb-6 flex justify-center">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center">{service.title}</h3>
-                <p className="text-gray-600 text-center leading-relaxed">{service.desc}</p>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  {service.desc}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -232,7 +321,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-4xl mx-auto px-6">
-          <motion.h2 
+          <motion.h2
             className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{
@@ -264,7 +353,9 @@ export default function About() {
                 <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xl font-bold mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
                   {i + 1}
                 </div>
-                <p className="font-semibold text-lg text-gray-900 group-hover:text-indigo-600 transition-colors">{step}</p>
+                <p className="font-semibold text-lg text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  {step}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -283,7 +374,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <motion.h2 
+          <motion.h2
             className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-gray-900 via-indigo-600 to-purple-600 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{
@@ -306,14 +397,21 @@ export default function About() {
                 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="text-5xl mb-6 text-indigo-500 flex justify-center">{value.icon}</div>
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center">{value.title}</h3>
-                <p className="text-gray-600 text-center leading-relaxed">{value.desc}</p>
+                <div className="text-5xl mb-6 text-indigo-500 flex justify-center">
+                  {value.icon}
+                </div>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  {value.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </motion.section>
+      <MissionVision/>
 
       {/* CTA */}
       <motion.section
@@ -324,7 +422,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-3xl mx-auto px-6">
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent drop-shadow-lg"
             initial={{ scale: 0.9 }}
             animate={{ scale: isCtaInView ? 1 : 0.9 }}
@@ -332,7 +430,7 @@ export default function About() {
           >
             Ready to Work With Us?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-300 mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{

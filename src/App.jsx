@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import AppRouter from "./Router/Router";
 import Nav from "./Components/Nav";
-import Trusted from "./Components/Trusted";
+import IndustryTrust from "./Components/Trusted";
 import Contact from "./Components/Contact";
 import Scroll from "./Components/Scrolltothetop";
 
@@ -16,7 +16,7 @@ return (
 <Scroll />
 <Nav />
 <AppRouter />
-<Trusted />
+<IndustryTrust/>
 <Contact />
 </>
 

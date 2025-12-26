@@ -77,7 +77,7 @@ Stay connected with P.A BAWAYA GROUP through our official
 communication channels.
 </p>
 <p className="text-sm font-medium">
-LinkedIn • WhatsApp • Email
+ WhatsApp • Email
 </p>
 </div>
 

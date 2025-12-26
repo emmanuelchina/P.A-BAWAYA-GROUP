@@ -16,33 +16,43 @@ const reviews = [
     role: "Business Owner",
     text: "Exceptional logistics support from P.A. BAWAYA GROUP. They helped bring in our products, managed customs clearing perfectly, and kept us informed throughout the entire process.",
   },
-    {
+  {
     name: "Mr Chris Oholi",
     role: "German Business Mogul",
     text: "Excellent Service from Start to finish.They handled importation, clearing and delivery seamlessly.Professional, reliable, and transparent throughout the process.Highly recommended for stress-free international trade.",
   },
-    {
+  {
     name: "Mr Dominic Ekwe",
     role: "Business Owner",
     text:" Working with P.A BAWAYA GROUP was a game-changer. They simplified international shipping, handled all documentation, and delivered our goods safely without delays.",
   },
-    {
+  {
     name: "Mr Chinedu Nwaku ",
     role: "Business owner",
     text: "Reliable and efficient importation services. They managed customs clearing, documentation, and delivery. Communication was clear timelines were met, and the entire process was smooth and worry- free.",
   },
-   {
+ {
     name: "Mr Emmanuel Danjuma",
     role: "Business Owner",
     text: "P.A. BAWAYA GROUP provided dependable ICT and tech solutions, combining strong technical expertise with timely project execution and responsive support that met our business needs effectively",
   },
-  
 ];
 
 export default function Review() {
   return (
     <section className="bg-gray-100 py-20">
       <div className="max-w-6xl mx-auto px-6">
+        
+        {/* REVIEWS BADGE - ONLY ADDITION */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
+            <span className="text-2xl">⭐</span>
+            <span className="text-lg font-bold text-slate-900 tracking-wide uppercase">
+              Reviews
+            </span>
+          </div>
+        </div>
+
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -54,7 +64,6 @@ export default function Review() {
           What Our Clients Say
         </motion.h2>
 
-   
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
             <motion.div
@@ -65,7 +74,6 @@ export default function Review() {
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-6 shadow-lg"
             >
-            
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-yellow-400 text-xl">
@@ -74,12 +82,10 @@ export default function Review() {
                 ))}
               </div>
 
-          
               <p className="text-slate-600 mb-6">
-                “{review.text}”
+                "{review.text}"
               </p>
 
-            
               <div>
                 <h4 className="font-semibold text-slate-900">
                   {review.name}

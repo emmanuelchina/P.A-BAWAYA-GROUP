@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 via-white to-gray-100 text-slate-900 min-h-screen flex items-center">
+    <div className="bg-gradient-to-b from-gray-50 via-white to-gray-200 text-slate-900 min-h-screen flex items-center">
       <div className="w-full">
         <motion.section
           variants={container}
@@ -63,9 +63,8 @@ export default function Home() {
             className="mt-6 text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
           >
             Delivering excellence across Logistics, Construction, ICT, Oil &amp;
-            Gas, and International Trade connecting ideas,
-            infrastructure, AirLine Services and opportunities for sustainable
-            growth.
+            Gas, and International Trade connecting ideas, infrastructure,
+            AirLine Services and opportunities for sustainable growth.
           </motion.p>
 
           <motion.div
@@ -75,16 +74,19 @@ export default function Home() {
           >
             <button
               onClick={handleClick}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base shadow-md shadow-blue-500/30"
+              className="
+              
+              border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base"
             >
               Explore our services
             </button>
 
             <button
               onClick={handleContact}
-              className="border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base shadow-md shadow-blue-500/30
+              "
             >
-              Talk to our team
+              Request a Consultation
             </button>
           </motion.div>
 

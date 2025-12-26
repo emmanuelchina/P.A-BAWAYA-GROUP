@@ -8,7 +8,12 @@ export default function Partner() {
     {
       name: "NELLYVAL GROUP",
       role: "Technical Partner",
-      image: "/img/IMG_2775 (3).jpeg",
+      image: "/img/2E309C28-7FF1-4A46-AEF8-21EC59A74118.png",
+    },
+    {
+      name: "T.M.C.U Sarl U",
+      role: "Strategic Partner",
+      image: "/img/file_0000000093dc720a9c02da6fed4a94c3.png",
     },
   ];
 
@@ -61,12 +66,23 @@ export default function Partner() {
   return (
     <section className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
+        
+        {/* PARTNERS & SUBSIDIARIES BADGE - ONLY ADDITION */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
+            <span className="text-2xl">🔗</span>
+            <span className="text-lg font-bold text-slate-900 tracking-wide uppercase">
+              Partners & Subsidiaries
+            </span>
+          </div>
+        </div>
+
         <header className="mb-10 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900">
-            Our Partners & Subsidiaries
+            Building Strong Alliances
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Strategic alliances and owned entities that strengthen the <span className="text-indigo-600">P.A. BAWAYA GROUP</span> value chain.
+           We work closely with trusted partners and affiliated entities to strengthen our capabilities, expand our reach, and deliver integrated solutions across our business operations.
           </p>
         </header>
 

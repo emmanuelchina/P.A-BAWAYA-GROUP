@@ -9,7 +9,8 @@ import {
   Building2,
   Clock,
   ChevronRight,
-  ChevronDown 
+  ChevronDown,
+  MessageCircle
 } from 'lucide-react'; // npm i lucide-react
 
 const offices = [
@@ -20,18 +21,16 @@ const offices = [
     email: 'Aniekwebawaya4@gmail.com',
   },
   {
-    city: 'Enugu HQ',
+    city: 'Great Vacation HQ',
     address: '1st Floor, Akalaka Plaza, 127 Upper chime Enugu, Enugu State',
     phone: '+234 816 385 7519, +234 905 084 5077 ',
     email: 'greatvacations20@gmail.com'
-
-
   },
   {
-    city: 'Abuja HQ',
+    city: 'MountVilla HQ',
     address: 'Plot 883 Olu Awotesu Street, Jabi-Abuja',
     phone: '+234 803 708 3514',
-    email: '',
+    email: '', // Empty - no email
   },
 ];
 
@@ -127,13 +126,13 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header - unchanged */}
+      {/* Header */}
       <header className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
         <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-6 pb-16 pt-20 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-600">Business made effortless</p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight text-gray-900 sm:text-5xl">Get in touch</h1>
+            <h1 className="mt-4 text-4xl font-semibold leading-tight text-gray-900 sm:text-5xl">Talk to Our Team</h1>
             <p className="mt-4 text-base text-gray-700 sm:text-lg">  Our company offers end-to-end solutions in logistics, construction, ICT, oil and gas, international trade, and airline services built to help businesses operate smoothly and grow.</p>
             <p className="mt-4 text-xs text-gray-500">Average response time under 30 business minutes.</p>
           </div>
@@ -295,7 +294,7 @@ export default function ContactPage() {
             </div>
           </motion.section>
 
-          {/* Animated Aside with Icons - UNCHANGED */}
+          {/* Animated Aside with WhatsApp Logo */}
           <motion.aside 
             ref={asideRef}
             initial="hidden"
@@ -335,6 +334,25 @@ export default function ContactPage() {
                     <p className="mt-1 font-medium text-gray-900 group-hover:text-blue-600 transition-colors flex items-center gap-1">
                       +234 803 337 4082 <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all ml-1" />
                     </p>
+                  </div>
+                </motion.div>
+
+                {/* WHATSAPP SECTION - NEWLY ADDED */}
+                <motion.div 
+                  variants={itemVariants}
+                  className="group flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-green-50/70 to-emerald-50/70 hover:bg-green-50 transition-all duration-200 border border-green-100/60 hover:border-green-200"
+                >
+                  <MessageCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-gray-500">WhatsApp</p>
+                    <a 
+                      href="https://wa.me/2348033374082" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="mt-1 font-medium text-gray-900 group-hover:text-green-600 transition-colors flex items-center gap-1"
+                    >
+                      Chat on WhatsApp <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all ml-1" />
+                    </a>
                   </div>
                 </motion.div>
 
@@ -379,7 +397,7 @@ export default function ContactPage() {
                 className="flex items-center gap-2 text-sm font-semibold text-gray-900 mb-4"
               >
                 <MapPin className="h-5 w-5 text-indigo-600" />
-                Head office
+                offices
               </motion.h3>
               
               <motion.ul 
@@ -400,11 +418,12 @@ export default function ContactPage() {
                         <a href={`tel:${office.phone}`} className="group-hover:text-blue-600 flex items-center gap-1 font-medium text-gray-800 hover:underline transition-colors">
                           <Phone className="h-4 w-4" /> {office.phone}
                         </a>
-                        <a href={`mailto:${office.email}`} className="group-hover:text-emerald-600 flex items-center gap-1 font-medium text-gray-800 hover:underline transition-colors">
-                          <Mail className="h-4 w-4" /> {office.email}
-                        </a>
+                        {office.email && (
+                          <a href={`mailto:${office.email}`} className="group-hover:text-emerald-600 flex items-center gap-1 font-medium text-gray-800 hover:underline transition-colors">
+                            <Mail className="h-4 w-4" /> {office.email}
+                          </a>
+                        )}
                       </div>
-          
                     </div>
                   </motion.li>
                 ))}
@@ -413,7 +432,7 @@ export default function ContactPage() {
           </motion.aside>
         </motion.div>
       </main>
-            
+      <ContactExtras/>
     </div>
   );
 }
