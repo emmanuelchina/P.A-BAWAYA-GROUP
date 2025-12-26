@@ -25,7 +25,7 @@ const handleAbout= () => {
       name: "Logistics & Supply Chain",
       icon: FaTruck,
       color: "text-blue-500 bg-blue-50",
-      stats: { projects: "500+", clients: "120+", uptime: "99.9%", routes: "42+" },
+      stats: { projects: "200+", clients: "100+", uptime: "99.9%", routes: "22+" },
       description: "End-to-end supply chain management with real-time tracking, multi-modal transportation, customs clearance, warehousing solutions, and dedicated account management.",
       features: ["Global Network", "Real-time Tracking", "Customs Clearance", "Warehousing", "24/7 Support"]
     },
@@ -33,7 +33,7 @@ const handleAbout= () => {
       name: "Airline Services",
       icon: FaPlane,
       color: "text-blue-600 bg-blue-50",
-      stats: { flights: "10K+", cargo: "50K+ tons", partners: "25+", airports: "18+" },
+      stats: { flights: "3K+", cargo: "20K+ tons", partners: "25+", airports: "18+" },
       description: "Comprehensive aviation support including cargo handling, flight logistics, ground operations, regulatory compliance, and priority boarding services.",
       features: ["Cargo Handling", "Ground Operations", "Flight Logistics", "Regulatory Compliance", "Priority Services"]
     },
@@ -41,7 +41,7 @@ const handleAbout= () => {
       name: "Oil & Gas",
       icon: FaOilCan,
       color: "text-blue-500 bg-blue-50",
-      stats: { rigs: "75+", wells: "200+", safety: "100%", sites: "35+" },
+      stats: { rigs: "30+", wells: "5+", safety: "100%", sites: "5+" },
       description: "Specialized logistics for onshore/offshore operations, equipment transport, hazardous materials handling, rig mobilization, and pipeline support services.",
       features: ["Hazardous Materials", "Rig Mobilization", "Offshore Logistics", "Pipeline Support", "Safety Certified"]
     },
@@ -49,7 +49,7 @@ const handleAbout= () => {
       name: "Construction & Infrastructure",
       icon: FaBuilding,
       color: "text-blue-600 bg-blue-50",
-      stats: { projects: "180+", sites: "45+", timeline: "98%", value: "$250M+" },
+      stats: { projects: "180+", sites: "45+", timeline: "98%" },
       description: "Heavy equipment transport, site preparation logistics, materials supply chain, project management support, and on-time delivery guarantees.",
       features: ["Heavy Equipment", "Site Preparation", "Materials Supply", "Project Management", "On-time Guarantee"]
     },
@@ -57,7 +57,7 @@ const handleAbout= () => {
       name: "ICT & Technology",
       icon: FaLaptopCode,
       color: "text-blue-500 bg-blue-50",
-      stats: { systems: "300+", uptime: "99.99%", support: "24/7", networks: "150+" },
+      stats: { systems: "100+", uptime: "99.99%", support: "24/7", networks: "70+" },
       description: "Data center logistics, IT hardware deployment, network infrastructure transport, tech support operations, and cybersecurity compliance.",
       features: ["Data Center", "Hardware Deployment", "Network Infra", "Tech Support", "Cybersecurity"]
     },
@@ -73,7 +73,7 @@ const handleAbout= () => {
       name: "Retail & International Trade",
       icon: FaGlobe,
       color: "text-blue-500 bg-blue-50",
-      stats: { shipments: "25K+", countries: "42+", clearance: "99%", volume: "120K m³" },
+      stats: { shipments: "10K+", countries: "42+", clearance: "99%", volume: "120K m³" },
       description: "Cross-border e-commerce logistics, retail distribution centers, international freight forwarding, customs brokerage, and last-mile delivery.",
       features: ["Cross-border", "Retail Distribution", "Freight Forwarding", "Customs Brokerage", "Last-mile Delivery"]
     },
@@ -264,16 +264,9 @@ const handleAbout= () => {
 
                 {/* CTA */}
                 <div className="space-y-3">
-                  <button 
-                    onClick={handleClick}
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-blue-800 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
-                    Learn More About {industry.name.split('&')[0]}
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
+              
                   <div className="text-xs text-gray-400 text-center font-medium">
-                    Trusted by Fortune 500 Companies
+                    Trusted by Business worldwide
                   </div>
                 </div>
               </motion.div>
@@ -284,28 +277,28 @@ const handleAbout= () => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="text-center py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 rounded-3xl px-8"
+            className="text-center py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 rounded-3xl px-4"
           >
-            <FaClock className="w-24 h-24 text-white/80 mx-auto mb-8" />
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <FaClock className="w-24 h-15 text-white/80 mx-auto mb-4" />
+            <h2 className="text-2xl md:text-5xl font-black text-white mb-6">
               Ready to Power Your Industry?
             </h2>
-            <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
+            <p className="text-sm text-blue-100 mb-12 max-w-2xl mx-auto">
               Partner with P.A. Bawaya Group for unmatched expertise across all sectors with guaranteed results.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
                  onClick={handleContact}
-              className="bg-white text-blue-600 px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
+              className="bg-white text-blue-600 px-9 py-4 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
                 Get Quote Now
               </button>
               <button 
               onClick={handleAbout}
-              className="border-2 border-white text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-blue-600 transition-all duration-300">
+              className="border-2 border-white text-white px-9 py-4 rounded-2xl font-bold text-xl hover:bg-white hover:text-blue-600 transition-all duration-300">
                 View Case Studies
               </button>
             </div>
-            <div className="mt-8 text-sm text-blue-200">
+            <div className="mt-5 text-sm text-blue-200">
               Serving Nigeria & West Africa | Licensed & Certified Operations
             </div>
           </motion.div>

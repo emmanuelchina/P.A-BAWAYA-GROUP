@@ -164,7 +164,7 @@ export default function Footer() {
         </div>
 
         {/* CONTACT SECTION - 4 COLUMNS WITH WHATSAPP */}
-        <div className="border-t border-slate-800/50 pt-16">
+        <div className="border-slate-800/50 pt-16">
         
 
           {/* FOOTER BOTTOM */}

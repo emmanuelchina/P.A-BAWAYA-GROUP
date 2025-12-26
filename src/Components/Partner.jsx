@@ -1,3 +1,5 @@
+import { FaUsers } from "react-icons/fa6";
+
 export default function Partner() {
   const partners = [
     {
@@ -70,7 +72,7 @@ export default function Partner() {
         {/* PARTNERS & SUBSIDIARIES BADGE - ONLY ADDITION */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-3 px-8 py-1 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
-            <span className="text-2xl">🔗</span>
+            <span className="text-2xl text-blue-400"><FaUsers/></span>
             <span className="text-sm font-bold text-slate-900 tracking-wide uppercase">
               Partners & Subsidiaries
             </span>

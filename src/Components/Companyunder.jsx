@@ -64,7 +64,7 @@ export default function Industry() {
         {/* INDUSTRIES WE SERVE BADGE - ONLY ADDITION */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-8 py-1 bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 shadow-2xl mx-auto max-w-max">
-            <span className="text-2xl">🌐</span>
+            <span className="text-2xl text-blue-400"><FaBuilding/></span>
             <span className="text-sm font-bold text-slate-900 tracking-wide uppercase">
               Industries We Serve
             </span>

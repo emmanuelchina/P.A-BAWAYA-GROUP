@@ -101,14 +101,7 @@ export default function Nav() {
             {/* ✅ FIXED: Now clickable phone link */}
         
             
-            <motion.button 
-              onClick={handleContact}
-              className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-bold px-8 py-3 rounded-2xl shadow-xl hover:shadow-2xl hover:from-indigo-700 hover:to-blue-700 transition-all duration-300 text-sm tracking-wide border-0"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Get Quote
-            </motion.button>
+          
           </motion.div>
 
           {/* Mobile menu button */}
