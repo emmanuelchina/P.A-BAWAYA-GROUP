@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-cover bg-center flex items-center" style={{
-      backgroundImage:"url('/public/img/containers-2018438_1280.jpg')"
+      backgroundImage:"url('/img/containers-2018438_1280.jpg')"
     }}>
     <div className="absolute inset-0 bg-black/50 min-h-screen flex items-center">
       <div className="w-full">
