@@ -49,18 +49,18 @@ export default function Nav() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="relative">
+            <div className="relative flex  items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-sm">
               <img
                 src="/img/IMG_2800.jpeg"
                 alt="P.A. Bawaya Group"
-                className="h-13 w-15.5 object-cover rounded-2xl  ring-indigo-100 group-hover:ring-indigo-200 transition-all duration-300"
+                className="h-14 w-19 rounded-xl object-cover border-2 border-white/20 shadow-lg"
               />
             </div>
             <div>
-              <div className="font-black text-xl bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-800 bg-clip-text text-transparent leading-tight">
+              <div className="font-black text-xl bg-gradient-to-r from-gray-900 via-blue-900 to-gray-800 bg-clip-text text-transparent leading-tight">
                 P.A. BAWAYA
               </div>
-              <div className="text-xs font-semibold text-indigo-600 tracking-wider uppercase">
+              <div className="text-xs font-semibold text-blue-600 tracking-wider uppercase">
                 GROUP
               </div>
             </div>
@@ -99,15 +99,7 @@ export default function Nav() {
             transition={{ delay: 0.2 }}
           >
             {/* ✅ FIXED: Now clickable phone link */}
-            <motion.a
-              href="tel:+2348033374082"
-              className="flex items-center space-x-2 text-sm text-gray-600 hover:text-green-600 cursor-pointer transition-all duration-300 group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <FaPhone className="text-lg group-hover:scale-110 transition-transform duration-200" />
-              <span className="font-semibold hover:underline">+234 803 337 4082</span>
-            </motion.a>
+        
             
             <motion.button 
               onClick={handleContact}
@@ -196,19 +188,7 @@ export default function Nav() {
                 </NavLink>
               </motion.div>
               
-              {/* Mobile CTA - Phone clickable too */}
-              <motion.div variants={itemVariants} className="pt-4 border-t border-gray-200 mt-4">
-                <motion.a
-                  href="tel:+2348033374082"
-                  onClick={() => setOpen(false)}
-                  className="flex items-center space-x-3 p-4 rounded-2xl bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 border border-green-200 text-green-800 font-semibold text-sm transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <FaPhone className="text-xl" />
-                  <span>Call Now: +234 803 337 4082</span>
-                </motion.a>
-              </motion.div>
+         
             </motion.div>
           </motion.div>
         )}

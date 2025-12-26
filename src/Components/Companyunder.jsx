@@ -13,9 +13,7 @@ import { useNavigate } from "react-router-dom";
 export default function Industry() {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/Services");
-  };
+ 
 
   const handleContact = () => {
     navigate("/Contact");
@@ -117,12 +115,7 @@ export default function Industry() {
             >
               Request a Consultation
             </button>
-            <button
-              onClick={handleClick}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-500 px-8 py-3 font-semibold text-white hover:bg-gray-400 transition w-60"
-            >
-              Explore Services
-            </button>
+         
           </div>
         </div>
 

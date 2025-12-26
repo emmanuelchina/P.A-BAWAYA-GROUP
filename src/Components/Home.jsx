@@ -29,7 +29,10 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 via-white to-gray-200 text-slate-900 min-h-screen flex items-center">
+    <div className="relative min-h-screen bg-cover bg-center flex items-center" style={{
+      backgroundImage:"url('/public/img/containers-2018438_1280.jpg')"
+    }}>
+    <div className="absolute inset-0 bg-black/50 min-h-screen flex items-center">
       <div className="w-full">
         <motion.section
           variants={container}
@@ -50,7 +53,7 @@ export default function Home() {
           <motion.h1
             custom={1}
             variants={item}
-            className="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-balance text-slate-900"
+            className="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-balance text-white"
           >
             Integrated{" "}
             <span className="text-blue-600">Business &amp; Industrial</span>{" "}
@@ -60,7 +63,7 @@ export default function Home() {
           <motion.p
             custom={2}
             variants={item}
-            className="mt-6 text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
+            className="mt-6 text-sm sm:text-base md:text-lg text-white max-w-2xl mx-auto leading-relaxed"
           >
             Delivering excellence across Logistics, Construction, ICT, Oil &amp;
             Gas, and International Trade connecting ideas, infrastructure,
@@ -76,7 +79,7 @@ export default function Home() {
               onClick={handleClick}
               className="
               
-              border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base"
+              border border-slate-300 bg-white hover:bg-slate-50 text-white-800 font-semibold py-2.5 px-6 rounded-lg text-sm sm:text-base"
             >
               Explore our services
             </button>
@@ -96,28 +99,30 @@ export default function Home() {
             className="mt-10 flex flex-wrap justify-center gap-6 text-xs sm:text-sm text-slate-600"
           >
             <div>
-              <span className="font-semibold text-slate-900">6+ sectors</span>
-              <span className="block text-slate-500">
+              <span className="font-semibold text-white">6+ sectors</span>
+              <span className="block text-white">
                 Logistics, ICT, Oil &amp; Gas…
               </span>
             </div>
             <div>
-              <span className="font-semibold text-slate-900">
+              <span className="font-semibold text-white">
                 Pan‑African reach
               </span>
-              <span className="block text-slate-500">
+              <span className="block text-white">
                 Regional &amp; global trade links
               </span>
             </div>
             <div>
-              <span className="font-semibold text-slate-900">Client‑first</span>
-              <span className="block text-slate-500">
+              <span className="font-semibold text-white">Client‑first</span>
+              <span className="block text-white">
                 Tailored industrial solutions
               </span>
             </div>
           </motion.div>
         </motion.section>
       </div>
+    </div>
+
     </div>
   );
 }
