@@ -14,6 +14,12 @@ export default function Companyserveds() {
     navigate("/Services");
   };
 
+   const handleContact = () => {
+    navigate("/Contact");
+  };
+const handleAbout= () => {
+    navigate("/About");
+  };
   const industries = [
     {
       name: "Logistics & Supply Chain",
@@ -288,10 +294,14 @@ export default function Companyserveds() {
               Partner with P.A. Bawaya Group for unmatched expertise across all sectors with guaranteed results.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-white text-blue-600 px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
+              <button
+                 onClick={handleContact}
+              className="bg-white text-blue-600 px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
                 Get Quote Now
               </button>
-              <button className="border-2 border-white text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-blue-600 transition-all duration-300">
+              <button 
+              onClick={handleAbout}
+              className="border-2 border-white text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-blue-600 transition-all duration-300">
                 View Case Studies
               </button>
             </div>

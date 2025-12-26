@@ -170,7 +170,7 @@ const ReadMore = () => {
             transition={{ duration: 0.4 }}
           >
             <span className="relative z-10 flex items-center gap-3">
-              Learn More About Us
+                                   &ensp;&ensp;Learn More About Us
               <motion.svg 
                 className="w-5 h-5" 
                 fill="none" 
@@ -180,7 +180,7 @@ const ReadMore = () => {
                 whileHover={{ x: 6 }}
                 transition={{ duration: 0.4 }}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              
               </motion.svg>
             </span>
             <motion.div 

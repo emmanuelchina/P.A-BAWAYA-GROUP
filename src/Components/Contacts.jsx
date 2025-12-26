@@ -11,7 +11,7 @@ import {
   ChevronRight,
   ChevronDown,
   MessageCircle
-} from 'lucide-react'; // npm i lucide-react
+} from 'lucide-react';
 
 const offices = [
   {
@@ -104,23 +104,13 @@ export default function ContactPage() {
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+  // ✅ PAGE LOAD ANIMATION ONLY (runs once on mount)
+  const pageLoadVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.8, ease: "easeOut" }
     }
   };
 
@@ -129,11 +119,11 @@ export default function ContactPage() {
       {/* Header */}
       <header className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
         <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-6 pb-16 pt-20 lg:flex-row lg:items-center lg:justify-between">
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-6 pb-8 pt-20 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-600">Business made effortless</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-gray-900 sm:text-5xl">Talk to Our Team</h1>
-            <p className="mt-4 text-base text-gray-700 sm:text-lg">  Our company offers end-to-end solutions in logistics, construction, ICT, oil and gas, international trade, and airline services built to help businesses operate smoothly and grow.</p>
+            <p className="mt-4 text-base text-gray-700 sm:text-lg">Our company offers end-to-end solutions in logistics, construction, ICT, oil and gas, international trade, and airline services built to help businesses operate smoothly and grow.</p>
             <p className="mt-4 text-xs text-gray-500">Average response time under 30 business minutes.</p>
           </div>
           <div className="mt-6 flex w-full max-w-md flex-col gap-4 rounded-2xl bg-white p-5 text-sm text-gray-900 shadow-xl shadow-gray-200/50 backdrop-blur-sm">
@@ -148,16 +138,17 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-6 pb-20 pt-10">
+      {/* Main - PAGE LOAD ANIMATION ONLY */}
+      <main className="mx-auto max-w-6xl px-6 pb-20 pt-4">
         <motion.div 
           ref={formRef}
           initial="hidden"
-          animate={formInView ? "visible" : "hidden"}
-          variants={containerVariants}
+          animate="visible"  // ✅ Always animates on page load
+          variants={pageLoadVariants}
           className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]"
         >
           <motion.section 
-            variants={itemVariants}
+            variants={pageLoadVariants}
             className="relative rounded-3xl bg-white p-6 shadow-2xl shadow-gray-200 ring-1 ring-gray-200/50 xl:p-8"
           >
             <div className="absolute inset-x-16 -top-16 h-32 bg-gradient-to-b from-blue-500/20 to-transparent blur-3xl" />
@@ -197,7 +188,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* SERVICE SELECT INPUT */}
                 <div>
                   <label className="text-xs font-medium uppercase tracking-wide text-gray-500 block mb-1">Service needed</label>
                   <div className="relative">
@@ -294,38 +284,37 @@ export default function ContactPage() {
             </div>
           </motion.section>
 
-          {/* Animated Aside with WhatsApp Logo */}
           <motion.aside 
             ref={asideRef}
             initial="hidden"
-            animate={asideInView ? "visible" : "hidden"}
-            variants={containerVariants}
+            animate="visible"  // ✅ Always animates on page load
+            variants={pageLoadVariants}
             className="space-y-6 lg:pt-8"
           >
             <motion.section 
-              variants={itemVariants}
+              variants={pageLoadVariants}
               className="rounded-3xl bg-white/80 p-6 shadow-xl shadow-gray-200/30 ring-1 ring-gray-200/50 backdrop-blur-sm hover:shadow-2xl transition-all duration-300"
             >
               <motion.h3 
-                variants={itemVariants}
+                variants={pageLoadVariants}
                 className="flex items-center gap-2 text-sm font-semibold text-gray-900 mb-4"
               >
                 <Building2 className="h-5 w-5 text-blue-600" />
                 Contact information
               </motion.h3>
               <motion.p 
-                variants={itemVariants}
+                variants={pageLoadVariants}
                 className="text-xs text-gray-600 mb-6"
               >
                 Prefer to speak directly? Reach the operations team below.
               </motion.p>
               
               <motion.div 
-                variants={containerVariants}
+                variants={pageLoadVariants}
                 className="space-y-4 text-sm"
               >
                 <motion.div 
-                  variants={itemVariants}
+                  variants={pageLoadVariants}
                   className="group flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-blue-50/50 to-indigo-50/50 hover:bg-blue-50 transition-all duration-200 border border-blue-100/50 hover:border-blue-200"
                 >
                   <Phone className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
@@ -337,9 +326,8 @@ export default function ContactPage() {
                   </div>
                 </motion.div>
 
-                {/* WHATSAPP SECTION - NEWLY ADDED */}
                 <motion.div 
-                  variants={itemVariants}
+                  variants={pageLoadVariants}
                   className="group flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-green-50/70 to-emerald-50/70 hover:bg-green-50 transition-all duration-200 border border-green-100/60 hover:border-green-200"
                 >
                   <MessageCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
@@ -357,7 +345,7 @@ export default function ContactPage() {
                 </motion.div>
 
                 <motion.div 
-                  variants={itemVariants}
+                  variants={pageLoadVariants}
                   className="group flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-emerald-50/50 to-green-50/50 hover:bg-emerald-50 transition-all duration-200 border border-emerald-100/50 hover:border-emerald-200"
                 >
                   <Mail className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
@@ -372,7 +360,7 @@ export default function ContactPage() {
                 </motion.div>
 
                 <motion.div 
-                  variants={itemVariants}
+                  variants={pageLoadVariants}
                   className="group flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-orange-50/50 to-yellow-50/50 hover:bg-orange-50 transition-all duration-200 border border-orange-100/50 hover:border-orange-200"
                 >
                   <Clock className="h-5 w-5 text-orange-600 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
@@ -389,11 +377,11 @@ export default function ContactPage() {
             </motion.section>
 
             <motion.section 
-              variants={itemVariants}
+              variants={pageLoadVariants}
               className="rounded-3xl bg-white p-6 shadow-xl shadow-gray-200/30 ring-1 ring-gray-200/50 backdrop-blur-sm hover:shadow-2xl transition-all duration-300"
             >
               <motion.h3 
-                variants={itemVariants}
+                variants={pageLoadVariants}
                 className="flex items-center gap-2 text-sm font-semibold text-gray-900 mb-4"
               >
                 <MapPin className="h-5 w-5 text-indigo-600" />
@@ -401,13 +389,13 @@ export default function ContactPage() {
               </motion.h3>
               
               <motion.ul 
-                variants={containerVariants}
+                variants={pageLoadVariants}
                 className="space-y-4 text-sm"
               >
                 {offices.map((office, index) => (
                   <motion.li 
                     key={office.city}
-                    variants={itemVariants}
+                    variants={pageLoadVariants}
                     className="group flex items-start gap-3 border-l-2 border-indigo-200 pl-4 hover:border-indigo-400 transition-all duration-200 hover:pl-6"
                   >
                     <MapPin className="h-5 w-5 text-indigo-600 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />

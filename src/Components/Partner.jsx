@@ -1,7 +1,7 @@
 export default function Partner() {
   const partners = [
     {
-      name: "LIVIA SOFT",
+      name: "LIVIASOFT",
       role: "Strategic Partner",
       image: "/img/IMG_2776.jpeg", 
     },
@@ -11,7 +11,7 @@ export default function Partner() {
       image: "/img/2E309C28-7FF1-4A46-AEF8-21EC59A74118.png",
     },
     {
-      name: "T.M.C.U Sarl U",
+      name: "Togo Mediterranean Consulting Mine",
       role: "Strategic Partner",
       image: "/img/file_0000000093dc720a9c02da6fed4a94c3.png",
     },
