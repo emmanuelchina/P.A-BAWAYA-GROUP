@@ -417,7 +417,7 @@ export default function About() {
       {/* CTA */}
       <motion.section
         ref={ctaRef}
-        className="bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 text-white py-24 text-center"
+        className="bg-gray-900 text-white py-24 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: isCtaInView ? 1 : 0 }}
         transition={{ duration: 0.6 }}

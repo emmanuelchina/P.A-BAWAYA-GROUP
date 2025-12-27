@@ -143,7 +143,7 @@ export default function ToolsTechnologies() {
               className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-[1.02]"
             >
               <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full" />
+                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-slate-400 rounded-full" />
                 {toolCategory.category}
               </h3>
 

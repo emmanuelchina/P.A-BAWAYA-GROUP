@@ -6,21 +6,18 @@ import {
   FaTruck,
   FaHeadset,
   FaChartLine,
-  FaRocket, // Added missing import
+  FaRocket,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-
-
-
-
 export default function WhyChooseUs() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleContact = () => {
+  const handleContact = () => {
     navigate("/Contact");
   };
+
   const reasons = [
     {
       icon: FaCheckCircle,
@@ -76,12 +73,11 @@ const navigate = useNavigate();
   return (
     <section className="w-full py-24 px-4 md:px-10">
       <div className="max-w-7xl mx-auto bg-gray-100">
-        {/* Header */}
+        {/* Header - Single load animation */}
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -94,47 +90,75 @@ const navigate = useNavigate();
           </p>
         </motion.div>
 
+        {/* Reasons Grid - Single staggered load animation */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
               <motion.div
                 key={reason.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  ease: "easeOut" 
+                }}
                 className="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl border border-gray-100 hover:border-blue-200 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-white via-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-all duration-300 mx-auto">
+                <motion.div 
+                  className="w-20 h-20 bg-gradient-to-br from-white via-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-all duration-300 mx-auto"
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.1,
+                    ease: "backOut" 
+                  }}
+                >
                   <Icon className={`${reason.color} w-12 h-12`} />
-                </div>
+                </motion.div>
 
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  <motion.h3 
+                    className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                  >
                     {reason.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  </motion.h3>
+                  <motion.p 
+                    className="text-gray-600 leading-relaxed text-lg"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                  >
                     {reason.description}
-                  </p>
+                  </motion.p>
                 </div>
 
-                <div className="mt-6 flex items-center justify-center">
+                <motion.div 
+                  className="mt-6 flex items-center justify-center"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                >
                   <div className="w-24 h-12 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all">
                     <FaCheckCircle className="text-white w-7 h-7" />
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             );
           })}
         </div>
 
+        {/* Stats - Single load animation */}
         <motion.div
           className="mt-24 grid md:grid-cols-4 gap-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
         >
           {[
             { number: "10K+", label: "Projects Delivered" },
@@ -142,9 +166,12 @@ const navigate = useNavigate();
             { number: "99.9%", label: "Success Rate" },
             { number: "24/7", label: "Global Support" },
           ].map((stat, index) => (
-            <div
+            <motion.div
               key={index}
               className="text-center p-8 bg-gray-100 backdrop-blur-sm rounded-2xl border border-white/50 hover:bg-white transition-all"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
             >
               <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
                 {stat.number}
@@ -152,26 +179,23 @@ const navigate = useNavigate();
               <div className="text-gray-700 font-semibold text-lg">
                 {stat.label}
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
-        {/* CTA */}
+        {/* CTA - Single load animation */}
         <motion.div
           className="text-center mt-20"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.4 }}
         >
-
-        <button
-              onClick={handleContact}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700 transition w-67"
-            >
-             Start Your Project
-            </button>
-
+          <button
+            onClick={handleContact}
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700 transition-all duration-300 w-auto"
+          >
+            Start Your Project
+          </button>
         </motion.div>
       </div>
     </section>

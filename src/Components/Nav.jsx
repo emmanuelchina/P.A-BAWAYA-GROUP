@@ -9,16 +9,13 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
-  const navigate = useNavigate();
-  const handleContact = () => {
-    navigate("/Contact");
-  };
+ 
   const [open, setOpen] = useState(false);
 
   const linkClass = ({ isActive }) =>
     `block px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 ${
       isActive
-        ? "bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-lg shadow-indigo-500/25"
+        ? "bg-gradient-to-r from-blue-600 to-gray-600 text-white"
         : "text-gray-700 hover:bg-gray-100 hover:text-gray-900 hover:shadow-md"
     }`;
 
@@ -77,7 +74,7 @@ export default function Nav() {
                 Home
               </NavLink>
               <NavLink to="/About" className={linkClass}>
-                Company
+            About
               </NavLink>
               <NavLink to="/Services" className={linkClass}>
                 Services
@@ -150,7 +147,7 @@ export default function Nav() {
                   to="/About"
                   className={linkClass}
                 >
-                  Company
+                 About
                 </NavLink>
               </motion.div>
               <motion.div variants={itemVariants}>

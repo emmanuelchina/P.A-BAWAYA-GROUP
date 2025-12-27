@@ -21,7 +21,6 @@ export default function Servicereadmore() {
   };
 
   const services = [
-    // ... (services data unchanged)
     {
       title: "Logistics Solutions",
       description: "Efficient movement and handling of goods across multiple channels.",
@@ -32,7 +31,7 @@ export default function Servicereadmore() {
         { title: "Clearing & Forwarding", text: "Professional customs clearing and documentation for smooth cargo release." },
       ],
     },
- {
+    {
       title: "Construction / Site Jobs",
       description: "End-to-end construction support and site operations management.",
       icon: <FaHardHat className="text-orange-500" size={32} />,
@@ -45,7 +44,7 @@ export default function Servicereadmore() {
     {
       title: "ICT & Tech Solutions",
       description: "Modern technology solutions designed to support business growth.",
-      icon: <FaLaptopCode className="text-purple-500" size={32} />,
+      icon: <FaLaptopCode className="text-teal-500" size={32} />,
       subs: [
         { title: "IT Infrastructure", text: "Setup and management of network systems and servers." },
         { title: "Software & Systems", text: "Implementation of digital and business software solutions." },
@@ -75,7 +74,7 @@ export default function Servicereadmore() {
     {
       title: "Airline Services",
       description: "Comprehensive air freight and aviation logistics solutions worldwide.",
-      icon: <FaPlane className="text-indigo-500" size={32} />,
+      icon: <FaPlane className="text-sky-500" size={32} />,
       subs: [
         { title: "Air Freight", text: "Fast and secure air cargo transportation for time-sensitive shipments globally." },
         { title: "Flight Booking & Visa", text: "Complete flight booking services and visa processing support for seamless international travel." },
@@ -138,145 +137,79 @@ export default function Servicereadmore() {
         </motion.div>
       </section>
 
-      {/* Services Section - Fade In Animations */}
-      <motion.section 
-        className="w-full bg-gray-100 py-16 px-4 md:px-10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
+      {/* Services Section - No Motion, No Indigo/Purple */}
+      <section className="w-full bg-gray-100 py-16 px-4 md:px-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Services
-            </motion.h2>
-            <motion.p
-              className="text-gray-600 max-w-2xl mx-auto text-lg"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <span className="text-indigo-600">P.A. Bawaya Group</span> delivers integrated solutions across logistics,
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              <span className="text-blue-600">P.A. Bawaya Group</span> delivers integrated solutions across logistics,
               construction, technology, oil & gas, international trade, and
               airline services.
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
 
           {/* Services Grid */}
           <div className="grid gap-10 md:gap-12">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={service.title}
                 className="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-all duration-500 group"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
               >
-                <motion.div 
-                  className="flex flex-col lg:flex-row items-start gap-6 mb-8"
-                  whileHover={{ transition: { staggerChildren: 0.1 } }}
-                >
-                  <motion.div 
-                    className="w-20 h-20 p-4 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 group-hover:rotate-5 transition-all duration-300"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                  >
+                <div className="flex flex-col lg:flex-row items-start gap-6 mb-8">
+                  <div className="w-20 h-20 p-4 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 group-hover:rotate-5 transition-all duration-300">
                     {service.icon}
-                  </motion.div>
-                  <motion.div className="flex-1 min-w-0">
-                    <motion.h3 
-                      className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600"
-                      whileHover={{ color: "#4f46e5" }}
-                      transition={{ duration: 0.3 }}
-                    >
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                       {service.title}
-                    </motion.h3>
-                    <motion.p 
-                      className="text-gray-600 text-lg leading-relaxed"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.2 }}
-                    >
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed">
                       {service.description}
-                    </motion.p>
-                  </motion.div>
-                </motion.div>
+                    </p>
+                  </div>
+                </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {service.subs.map((sub, subIndex) => (
-                    <motion.div
+                    <div
                       key={subIndex}
-                      className="group border border-gray-200/50 rounded-2xl p-6 bg-gray-50/50 hover:bg-white hover:border-indigo-200 hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2"
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: (index * 0.1) + (subIndex * 0.05) }}
-                      whileHover={{ scale: 1.03 }}
+                      className="group border border-gray-200/50 rounded-2xl p-6 bg-gray-50/50 hover:bg-white hover:border-blue-200 hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2"
                     >
-                      <motion.h4 
-                        className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-indigo-600 transition-colors duration-300"
-                        whileHover={{ scale: 1.02 }}
-                      >
+                      <h4 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                         {sub.title}
-                      </motion.h4>
-                      <motion.p 
-                        className="text-gray-600 leading-relaxed text-base"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: 0.1 }}
-                      >
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed text-base">
                         {sub.text}
-                      </motion.p>
-                    </motion.div>
+                      </p>
+                    </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          {/* Request a Consultation Button - Centered with Fade In */}
-          <motion.div 
-            className="text-center pt-20 pb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <motion.button
+          {/* Request a Consultation Button - Centered */}
+          <div className="text-center pt-20 pb-12">
+            <button
               onClick={handleConsultation}
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 px-12 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-lg tracking-wide"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               Request a Consultation
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
         </div>
         
-        {/* Child Components */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
+        {/* Child Components - No Motion */}
+        <div>
           <Industries />
           <ToolsTechnologies />
           <WhyChooseUs />
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
     </section>
   );
 }
