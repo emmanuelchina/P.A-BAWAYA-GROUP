@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ContactExtras from './ContactExtra';
+
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import { 
@@ -420,7 +420,6 @@ export default function ContactPage() {
           </motion.aside>
         </motion.div>
       </main>
-      <ContactExtras/>
     </div>
   );
 }
