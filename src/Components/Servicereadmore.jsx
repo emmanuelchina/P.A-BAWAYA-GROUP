@@ -85,7 +85,7 @@ export default function Servicereadmore() {
   ];
 
   return (
-    <section className="w-full">
+    <section className="w-full bg-gray-100">
       {/* HERO - Continuous Motion (unchanged) */}
       <section className="h-80 w-full py-24 bg-slate-900 flex items-center justify-center relative overflow-hidden">
         {/* Floating Background Particles */}
@@ -140,7 +140,7 @@ export default function Servicereadmore() {
 
       {/* Services Section - Fade In Animations */}
       <motion.section 
-        className="w-full bg-gray-50 py-16 px-4 md:px-10"
+        className="w-full bg-gray-100 py-16 px-4 md:px-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

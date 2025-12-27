@@ -186,7 +186,7 @@ const handleAbout= () => {
       </div>
 
       {/* Rest of SECOND version stays exactly the same */}
-      <section className="bg-gray-50 py-32 px-4 md:px-10">
+      <section className="bg-gray-100 py-32 px-4 md:px-10">
         <div className="max-w-7xl mx-auto">
           {/* Featured Stats */}
           <motion.div 
