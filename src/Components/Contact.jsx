@@ -115,9 +115,9 @@ export default function Footer() {
                 <nav className="space-y-3 pt-2">
                   {[
                     { icon: Home, href: '/', label: 'Home' },
-                    { icon: Info, href: '/About', label: 'About Us' },
+                    { icon: Info, href: '/About', label: 'Company' },
                     { icon: Layers, href: '/Services', label: 'Services' },
-                    { icon: Building2, href: '/Industries', label: 'Company' },
+                    { icon: Building2, href: '/Industries', label: 'Industries' },
                     { icon: MailIcon, href: '/Contact', label: 'Contact' }
                   ].map(({ icon: Icon, href, label }, index) => (
                     <a 

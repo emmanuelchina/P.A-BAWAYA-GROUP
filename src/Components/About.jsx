@@ -107,7 +107,7 @@ export default function About() {
   };
 
   return (
-    <main className="w-full bg-gradient-to-b from-gray-50 via-gray-100 to-white min-h-screen text-gray-800 overflow-hidden">
+    <main className="w-full bg-gray-100 min-h-screen text-gray-800 overflow-hidden">
       {/* HERO - Always Active Continuous Motion */}
       <motion.section
         className="bg-gray-900 text-white py-24 text-center h-80 flex items-center relative overflow-hidden"
@@ -260,6 +260,7 @@ export default function About() {
           ))}
         </div>
       </motion.section>
+            <MissionVision/>
 
       {/* SERVICES */}
       <motion.section
@@ -294,7 +295,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="text-5xl text-indigo-600 mb-6 flex justify-center">
+                <div className="text-5xl text-blue-600 mb-6 flex justify-center">
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center">
@@ -312,7 +313,7 @@ export default function About() {
       {/* PROCESS */}
       <motion.section
         ref={processRef}
-        className="py-24 bg-gradient-to-b from-white to-gray-50"
+        className="py-24"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{
           opacity: isProcessInView ? 1 : 0,
@@ -322,7 +323,7 @@ export default function About() {
       >
         <div className="max-w-4xl mx-auto px-6">
           <motion.h2
-            className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: isProcessInView ? 1 : 0,
@@ -350,10 +351,10 @@ export default function About() {
                 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xl font-bold mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
+                <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-blue-600 text-white text-xl font-bold mb-6 shadow-lg group-hover:scale-110 transition-all duration-300">
                   {i + 1}
                 </div>
-                <p className="font-semibold text-lg text-gray-900 group-hover:text-indigo-600 transition-colors">
+                <p className="font-semibold text-lg text-gray-900 group-hover:text-blue-800 transition-colors">
                   {step}
                 </p>
               </motion.div>
@@ -375,7 +376,7 @@ export default function About() {
       >
         <div className="max-w-7xl mx-auto px-6">
           <motion.h2
-            className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-gray-900 via-indigo-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-4xl font-bold text-center mb-20 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent bg-clip-text "
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: isValuesInView ? 1 : 0,
@@ -389,7 +390,7 @@ export default function About() {
             {values.map((value, i) => (
               <motion.div
                 key={i}
-                className="bg-white shadow-lg rounded-xl p-8 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-indigo-200"
+                className="bg-gray-100 shadow-lg rounded-xl p-8 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-indigo-200"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{
                   opacity: isValuesInView ? 1 : 0,
@@ -397,7 +398,7 @@ export default function About() {
                 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="text-5xl mb-6 text-indigo-500 flex justify-center">
+                <div className="text-5xl mb-6 text-blue-600 flex justify-center">
                   {value.icon}
                 </div>
                 <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center">
@@ -411,7 +412,7 @@ export default function About() {
           </div>
         </div>
       </motion.section>
-      <MissionVision/>
+
 
       {/* CTA */}
       <motion.section

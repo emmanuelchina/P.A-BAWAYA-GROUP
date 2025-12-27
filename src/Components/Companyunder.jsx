@@ -109,6 +109,7 @@ export default function Industry() {
         {/* CTA Buttons Section */}
         <div className="text-center max-w-2xl mx-auto">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          
             <button
               onClick={handleContact}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700 transition w-67"

@@ -74,7 +74,7 @@ const navigate = useNavigate();
   ];
 
   return (
-    <section className="w-full bg-gradient-to-br from-gray-50 via-white to-blue-50 py-24 px-4 md:px-10">
+    <section className="w-full bg-gray-100 py-24 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -144,7 +144,7 @@ const navigate = useNavigate();
           ].map((stat, index) => (
             <div
               key={index}
-              className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/50 hover:bg-white transition-all"
+              className="text-center p-8 bg-gray-100 backdrop-blur-sm rounded-2xl border border-white/50 hover:bg-white transition-all"
             >
               <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
                 {stat.number}
@@ -164,13 +164,14 @@ const navigate = useNavigate();
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <button
-           onClick={handleContact}
-            className="group inline-flex items-center gap-4 px-12 py-6 bg-blue-600 to-purple-600 text-white font-bold text-xl rounded-3xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 hover:from-indigo-700 hover:via-blue-700 hover:to-purple-700"
-          >
-            <span>Start Your Project Today</span>
-            <FaRocket className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-          </button>
+
+        <button
+              onClick={handleContact}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700 transition w-67"
+            >
+             Start Your Project
+            </button>
+
         </motion.div>
       </div>
     </section>
