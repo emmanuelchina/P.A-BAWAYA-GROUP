@@ -22,10 +22,10 @@ const ReadMore = () => {
   };
 
   const images = [
-    { src: "/img/container-817406_1280.jpg", alt: "Logistics" },
-    { src: "/img/refinery-3613522_1280.jpg", alt: "Oil & Gas" },
-    { src: "/img/construction-site-3555550_1280.jpg", alt: "Construction" },
-    { src: "/img/2255f80e-4d4d-4826-8848-bf5710cdb089.jpeg", alt: "Aviation" }
+    { src: "/img/container-817406_1280.webp", alt: "Logistics" },
+    { src: "/img/refinery-3613522_1280.webp", alt: "Oil & Gas" },
+    { src: "/img/background-check-2739233_1280.webp", alt: "Construction" },
+    { src: "/img/2255f80e-4d4d-4826-8848-bf5710cdb089.webp", alt: "Aviation" }
   ];
 
   const containerVariants = {

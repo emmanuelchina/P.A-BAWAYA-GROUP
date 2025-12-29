@@ -48,7 +48,7 @@ export default function Nav() {
           >
             <div className="relative flex  items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-sm">
               <img
-                src="/img/IMG_2800.jpeg"
+                src="/img/IMG_2800.webp"
                 alt="P.A. Bawaya Group"
                 className="h-14 w-19 rounded-xl object-cover border-2 border-white/20 shadow-lg"
               />

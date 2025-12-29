@@ -7,18 +7,18 @@ export default function Preloader() {
         {/* Logo with subtle glow */}
         <div className="relative mb-8">
           <img
-            src="/img/IMG_2800.jpeg"
+            src="/img/IMG_2800.webp"
             alt="P.A. Bawaya Group Logo"
             className="w-26 h-24 rounded-2xl shadow-2xl ring-2 ring-white/50 backdrop-blur-sm object-cover"
             loading="lazy"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-gray-500/20 rounded-2xl blur-xl animate-pulse"></div>
         </div>
 
       
         <div className="w-20 h-px bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 mb-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 animate-shimmer"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-gray-500/30 animate-shimmer"></div>
         </div>
 
    
@@ -49,7 +49,7 @@ export default function Preloader() {
 
         {/* Enhanced progress bar */}
         <div className="w-48 h-2 bg-gray-100/80 backdrop-blur-sm rounded-full overflow-hidden shadow-inner">
-          <div className="h-full bg-gradient-to-r from-white-600 via-gray-600 to-blue-600 rounded-full animate-progress w-[0%] shadow-md"></div>
+          <div className="h-full bg-blue-600 rounded-full animate-progress w-[0%] shadow-md"></div>
         </div>
       </div>
 

@@ -29,9 +29,12 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-cover bg-center flex items-center" style={{
-      backgroundImage:"url('/img/containers-2018438_1280.jpg')"
-    }}>/
+    <div className="relative min-h-screen bg-cover bg-center flex items-center" >
+    <img
+    src="/img/containers-2018438_1280.webp"
+    alt="Logistics Containers"
+    className="absolute inset-0 w-full h-full object-cover"
+    fetchPriority="high"/>
     <div className="absolute inset-0 bg-black/50 min-h-screen flex items-center">
       <div className="w-full">
         <motion.section
