@@ -171,7 +171,7 @@ export default function Footer() {
           <div className="pt-12 border-t border-slate-800/50">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 text-center lg:text-left">
               <p className="text-sm text-slate-500 font-medium">
-                © 2026 P.A. Bawaya Group. All rights reserved.
+                ©{new Date().getFullYear()} P.A. Bawaya Group. All rights reserved.
               </p>
             </div>
           </div>
