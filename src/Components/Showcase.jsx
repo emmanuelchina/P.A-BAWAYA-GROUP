@@ -61,7 +61,6 @@ return () => clearInterval(interval);
 
 const service = services[index];
 
-// 🚀 GPU-SAFE SLIDE VARIANTS
 const slideVariants = {
 initial: (dir) => ({
 x: dir > 0 ? "100%" : "-100%",
@@ -110,7 +109,7 @@ className="absolute inset-0 will-change-transform"
 onHoverStart={() => setIsHovered(true)}
 onHoverEnd={() => setIsHovered(false)}
 >
-{/* IMAGE */}
+
 <div className="relative w-full h-full">
 <motion.img
 src={service.image}
@@ -125,7 +124,7 @@ transition={{ duration: 0.8 }}
 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
 </div>
 
-{/* 🔷 RESTORED DECORATIVE ELEMENTS (SAFE) */}
+
 <motion.div
 className="absolute top-6 left-6 w-24 h-24 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl hidden lg:block"
 animate={{ scale: [1, 1.05, 1] }}
@@ -142,7 +141,7 @@ animate={{ scale: [1, 1.04, 1] }}
 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
 />
 
-{/* CONTENT */}
+
 <motion.div
 className="absolute inset-0 flex items-center justify-center px-6 lg:px-12"
 initial={{ opacity: 0, y: 30 }}
@@ -184,7 +183,7 @@ View Details
 </motion.div>
 </AnimatePresence>
 
-{/* INDICATORS */}
+
 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
 {services.map((_, i) => (
 <button
@@ -202,7 +201,6 @@ i === index
 ))}
 </div>
 
-{/* PAUSE INDICATOR */}
 <div className="absolute top-6 right-6 px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30 text-white text-xs font-semibold">
 {isHovered ? "⏸️ Paused" : "▶️ Auto"}
 </div>

@@ -108,11 +108,11 @@ export default function About() {
 
   return (
     <main className="w-full bg-gray-100 min-h-screen text-gray-800 overflow-hidden">
-      {/* HERO - Always Active Continuous Motion */}
+     
       <motion.section
         className="bg-gray-900 text-white py-24 text-center h-80 flex items-center relative overflow-hidden"
       >
-        {/* Floating Background Particles */}
+       
         <div className="absolute inset-0">
           <motion.div
             className="absolute top-10 left-10 w-2 h-2 bg-white/20 rounded-full"
@@ -163,7 +163,7 @@ export default function About() {
             }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            {/* Pulsing Award Icon */}
+
             <motion.div
               animate={{
                 scale: [1, 1.1, 1],
@@ -178,7 +178,7 @@ export default function About() {
               <FaAward className="mx-auto text-7xl mb-6 opacity-80 drop-shadow-2xl" />
             </motion.div>
             
-            {/* Continuous Breathing Title */}
+    
             <motion.h1 
               className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-slate-900 via-white to-slate-700 bg-clip-text text-transparent leading-tight drop-shadow-lg"
               animate={{
@@ -195,7 +195,7 @@ export default function About() {
               About Our Company
             </motion.h1>
             
-            {/* Floating Subtitle */}
+        
             <motion.p
               className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto"
               animate={{
@@ -214,7 +214,7 @@ export default function About() {
         </div>
       </motion.section>
 
-      {/* WHO WE ARE */}
+
       <motion.section
         ref={whoWeAreRef}
         className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-14"
@@ -262,7 +262,7 @@ export default function About() {
       </motion.section>
             <MissionVision/>
 
-      {/* SERVICES */}
+ 
       <motion.section
         ref={servicesRef}
         className="py-24"
@@ -310,7 +310,7 @@ export default function About() {
         </div>
       </motion.section>
 
-      {/* PROCESS */}
+    
       <motion.section
         ref={processRef}
         className="py-24"
@@ -363,7 +363,6 @@ export default function About() {
         </div>
       </motion.section>
 
-      {/* VALUES */}
       <motion.section
         ref={valuesRef}
         className="py-24"
@@ -414,7 +413,7 @@ export default function About() {
       </motion.section>
 
 
-      {/* CTA */}
+
       <motion.section
         ref={ctaRef}
         className="bg-gray-900 text-white py-24 text-center"

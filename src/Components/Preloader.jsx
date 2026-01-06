@@ -16,7 +16,7 @@ export default function Preloader() {
               type="image/webp"
             />
             <img
-              src="/img/IMG_2800.jpg"  // Progressive JPEG fallback
+              src="/img/IMG_2800.webp"  // Progressive JPEG fallback
               alt="P.A. Bawaya Group Logo"
               className="w-26 h-24 rounded-2xl shadow-2xl ring-2 ring-white/50 backdrop-blur-sm object-cover"
               decoding="async"
@@ -28,9 +28,9 @@ export default function Preloader() {
         </div>
 
         {/* Preload critical assets */}
-        <link rel="preload" href="/img/IMG_2800.avif" as="image" />
         <link rel="preload" href="/img/IMG_2800.webp" as="image" />
-        <link rel="preload" href="/img/IMG_2800.jpg" as="image" />
+        <link rel="preload" href="/img/IMG_2800.webp" as="image" />
+        <link rel="preload" href="/img/IMG_2800.webp" as="image" />
 
         <div className="w-20 h-px bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 mb-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-gray-500/30 animate-shimmer"></div>

@@ -44,14 +44,14 @@ export default function Partner() {
       email: "greatvacations20@gmail.com",
       phone: "0816 385 7519, 0905 084 5077",
       location: "1st Floor, Akalaka Plaza, 127 Upper chime Enugu, Enugu State",  
-      image: "/img/Cloud Travel logo.png"
+      image: "/img/Cloud-Travel-logo.png"
     },
     {
       name: "MOUNTVILLA",
       focus: "CONSTRUCTIONS",
       phone: "0803 708 3514",
       location: "Plot 883 Olu Awotesu Street, Jabi-Abuja", 
-      image: "/img/Orange White Modern Construction Logo (1).png"
+      image: "/img/Orange-White-Modern-Construction-Logo.png"
     },
   ];
 
