@@ -1,37 +1,31 @@
-// Preloader.jsx - ULTRA-FAST IMAGE LOADING
+// Preloader.jsx - FIXED FOR WEBP-ONLY
 export default function Preloader() {
   return (
     <div className="fixed inset-0 z-[9999] bg-gradient-to-br from-slate-50 via-white to-blue-50 flex items-center justify-center">
       <div className="flex flex-col items-center text-center px-6 max-w-md animate-floatIn">
         
-        {/* OPTIMIZED LOGO - PRELOADED + MULTIPLE FORMATS */}
+        {/* ✅ FIXED: WebP only + CORRECT TYPES */}
         <div className="relative mb-8">
           <picture>
-            <source 
-              srcSet="/img/IMG_2800.webp" 
-              type="image/avif"
-            />
             <source 
               srcSet="/img/IMG_2800.webp" 
               type="image/webp"
             />
             <img
-              src="/img/IMG_2800.webp"  // Progressive JPEG fallback
+              src="/img/IMG_2800.webp"  // ✅ WebP fallback (you have this)
               alt="P.A. Bawaya Group Logo"
               className="w-26 h-24 rounded-2xl shadow-2xl ring-2 ring-white/50 backdrop-blur-sm object-cover"
               decoding="async"
-              fetchPriority="high"  // CRITICAL: Forces instant load
-              // REMOVED: loading="lazy" - defeats preloader purpose
+              fetchPriority="high"
             />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-gray-500/20 rounded-2xl blur-xl animate-pulse"></div>
         </div>
 
-        {/* Preload critical assets */}
-        <link rel="preload" href="/img/IMG_2800.webp" as="image" />
-        <link rel="preload" href="/img/IMG_2800.webp" as="image" />
-        <link rel="preload" href="/img/IMG_2800.webp" as="image" />
+        {/* ✅ SINGLE PRELOAD */}
+        <link rel="preload" href="/img/IMG_2800.webp" as="image" fetchPriority="high" />
 
+        {/* Rest of your code unchanged */}
         <div className="w-20 h-px bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 mb-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-gray-500/30 animate-shimmer"></div>
         </div>
